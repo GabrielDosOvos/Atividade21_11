@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sistema Operacional - Eduvale</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-12">
+                <h1 class="alert alert-info text-center">Aulas de Sistemas Operacionais</h1>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-3">
+
+                <div class="list-group">
+                    <a href="index.html" class="list-group-item ">Visão Geral dos Sistemas Operacionais</a>
+                    <a href="evolucao.html" class="list-group-item">A Evolução dos Sistemas Operacionais</a>
+                    <a href="ocorrencias.html" class="list-group-item">Concorrência</a>
+                    <a href="estrutura.html" class="list-group-item">Estrutura do Sistema Operacional</a>
+                    <a href="processo.html" class="list-group-item">Processo</a>
+                    <a href="thread.html" class="list-group-item">Thread</a>
+                    <a href="sincronizacao.html" class="list-group-item">Sincronização e Comunicação de Processos</a>
+                    <a href="gerencia_processador.html" class="list-group-item">Gerencia do Processador</a>
+                    <a href="gerencia_memoria.html" class="list-group-item active">Gerência de Memória</a>
+                    <a href="gerencia_dispositivos.html" class="list-group-item">Gerencia de dispositivos</a>
+                    <a href="gerencia_arquivos.html" class="list-group-item">Gerência de Sistema de Arquivos</a>
+                    <a href="multiplos_processarores.html" class="list-group-item">Sistemas com múltiplos
+                        processadores</a>
+                </div>
+            </div>
+
+            <div class="col-9">
+                <h2 class="text-center alert alert-secondary">Gerência de Memória</h2>
+                <h3>Introdução</h3>
+                <p>A memória é um importante recurso que deve ser gerenciado cuidadosamente. É senso comum perceber que, embora a capacidade de memória disponível nos sistemas de computação cada vez aumente mais, os desenvolvedores de software demandam mais
+                    memória para que seus programas possam ser armazenados e
+                </p>
+                executados. A questão é que a memória, ao contrário do processador, possui um limite e por isso seu gerenciamento é crítico para o funcionamento dos processos pelo SO. Gerenciamento de memória é a tarefa desempenhada pela parte do SO que controla o uso
+                da memória.
+
+                <h3>Funções da Gerência de Memória</h3>
+                <p>É função dessa parte do SO conhecer quais regiões da memória estão em uso e quais não estão sendo usadas, alocar memória para processos quando eles necessitarem e desalocá-la quando os processos terminarem de ser executados, gerenciar
+                    o swapping entre a memória principal e o disco, quando a memória principal não for grande o suficiente para comportar todos os processos.</p>
+                <h3>A Gerência de Memória em Sistemas Multiprogramados</h3>
+                <p>A necessidade de manter múltiplos programas ativos na memória do sistema impõe outra necessidade: a de controlar como esta memória é utilizada por estes vários programas. </p>
+                <p>O gerenciamento de memória é, portanto, o resultado da aplicação de duas práticas distintas dentro de um sistema de computação:</p>
+                <ul>
+                    <li> Como a memória é vista, isto é, como pode ser utilizada pelos processos existentes neste sistema.
+                    </li>
+                    <li> Como os processos são tratados pelo SO quanto às suas necessidades de uso de memória.</li>
+                </ul>
+
+                <h3>A Organização Hierárquica da Memória</h3>
+                <p>Em um sistema de computação, o armazenamento de dados ocorre em diversos níveis. </p>
+                <p>Isso quer dizer que o armazenamento é realizado em diferentes tipos de dispositivos devido a quatro fatores básicos:</p>
+
+                <ol>
+                    <li>Tempo de acesso.</li>
+                    <li>Velocidade de operação.</li>
+                    <li>Custo por unidade de armazenamento.</li>
+                    <li>Capacidade de armazenamento.</li>
+                </ol>
+
+                <p>Com isso, o projetista de um sistema operacional determina quanto de cada tipo de memória será necessário para que o sistema seja, ao mesmo tempo, eficiente e economicamente viável. Ocorre que quanto mais rápida mais cara a memória e menor
+                    sua capacidade de armazenamento de dados. Abaixo é exibida uma figura demonstrando essa hierarquia da organização da memória:</p>
+                <img src="imgs/memoria1.png" alt="">
+
+
+                <p>O Armazenamento Interno são posições de memória disponíveis internamente ao processador para permitir ou agilizar sua operação. É constituído dos registradores do processador e de seu cache interno.
+                </p>
+                <p>O Armazenamento Primário são as posições de memória interna diretamente acessíveis pelo processador. Tipicamente, são CIs de memória SRAM, DRAM, EPROM, PROM, entre outras. </p>
+                <p>O Armazenamento Secundário são as posições de memória externa que não podem ser acessadas diretamente pelo processador, devendo ser movidas para o Armazenamento Primário antes da sua utilização. Tipicamente, são os dispositivos de armazenamento
+                    de massa tal como o disco rígido.</p>
+                <p>Perceba que o Armazenamento Interno possui as maiores velocidades de acesso, ou seja, os menores tempos de acesso, representando os melhores dispositivos em termos de desempenho, embora sejam os mais caros. Por outro lado, os dispositivos
+                    de Armazenamento Secundário são os de maior capacidade e os de melhor relação custo/Byte, mas consideravelmente mais lentos. </p>
+                <p>O Armazenamento Primário representa um caso intermediário, em que a velocidade e o tempo de acesso são adequados à operação direta com o processador, mas cujo custo ainda assim é alto. </p>
+                <p>Com a evolução dos computadores, a atual organização conta com outros elementos adicionados para otimizar o desempenho do sistema e, ainda assim, reduzir seu custo.</p>
+
+                <img src="imgs/memoria2.png" alt="">
+
+                <p>Os registradores, implementados em número limitado em razão de seu custo, são geralmente usados para manter dentro do processador dados frequentemente utilizados. </p>
+                <p>Os caches interno e externo, em razão de sua maior velocidade, são usados para manter uma porção do programa que pode ser executada mais rapidamente do que na memória principal, aumentando o desempenho do sistema. </p>
+                <p>A memória primária armazena os programas e dados em execução no sistema. </p>
+                <p>Os dispositivos de armazenamento Secundário são usados para preservação dos dados de forma perene. O cache de disco é utilizado para acelerar a operação das unidades de disco, podendo esta técnica ser utilizada para outros tipos de periféricos</p>
+
+                <h3>Tipos de Gerenciamento de Memória</h3>
+                <p>De maneira geral, sistemas de gerenciamento de memória podem ser divididos em duas classes: aqueles que movem processos (programas) do disco para a memória principal e vice-versa, e aqueles que não realizam isto, trabalhando somente na
+                    memória. </p>
+
+                <h4></h4>
+                Alocações Particionadas Estática e Dinâmica
+                <p>Em sistemas multiprogramados, a memória primária é dividida em blocos chamados de partições. Inicialmente, as partições, embora de tamanho fixo, não tinham necessariamente o mesmo tamanho entre elas, possibilitando diferentes configurações
+                    para sua utilização. Este esquema é conhecido como alocação particionada estática e tinha como grandes problemas:</p>
+                <ul>
+                    <li>O fato de os programas, normalmente, não preencherem totalmente as partições onde eram carregados, desperdiçando espaço.</li>
+
+                    <li>Se um programa fosse maior do que qualquer partição livre, ele ficaria aguardando uma que o acomodasse, mesmo se existisse duas ou mais partições adjacentes que, somadas, totalizassem o tamanho do programa. Este tipo de problema, onde
+                        pedaços de memória ficam impedidos de serem usados por outros programas, é chamado de fragmentação.</li>
+                </ul>
+
+                <p>A figura abaixo demonstra o problema de fragmentação de memória:</p>
+
+                <img src="imgs/memoria3.png" alt="">
+
+                <p>Dado o problema da fragmentação na alocação particionada estática, foi necessário outro tipo de alocação como solução e, consequentemente, o aumento do compartilhamento da memória. Na alocação particionada dinâmica, foi eliminado o conceito
+                    de partições de tamanho fixo. Nesse esquema, cada programa utilizaria o espaço que necessitasse, passando esse bloco a ser sua partição.</p>
+                <p>A figura abaixo demonstra o esquema de alocação particionada dinâmica:</p>
+
+                <p>A princípio, o problema da fragmentação pareceu estar resolvido, porém, neste caso, a fragmentação começará a ocorrer, realmente, quando os programas forem terminando e deixando espaços cada vez menores na memória, não permitindo o ingresso
+                    de novos programas.</p>
+                <p>Para exemplificar este fato, veja os seguintes programas; com o término de B e E, mesmo existindo 8 KB livres de memória, o programa D, de 6 KB, não poderá ser carregado.</p>
+                <p>Depois de já ter sido detectada a fragmentação da memória, há duas soluções para o problema:</p>
+                <p>a) Caso o programa C termine, o sistema pode reunir apenas os espaços adjacentes, produzindo espaço de tamanho 8 KB.</p>
+                <p>b) Caso o programa C continue executando, o sistema pode realocar todas as partições ocupadas, eliminando todos os espaços entre elas e criando uma única área livre contígua.</p>
+                <p>A complexidade do algoritmo de desfragmentação e o consumo de recursos do sistema, como processador e área em disco, podem tornar este processo inviável. É importante perceber que, nesses dois tipos de gerenciamento de memória apresentados,
+                    o espaço de endereçamento é igual ao tamanho da memória primária existente no sistema.</p>
+
+                <h3>A técnica de Swapping</h3>
+                <p>Em um sistema de Processamento em Lotes, a organização de memória em partições fixas é simples e eficiente. Desde que jobs suficientes possam ser mantidos na memória, de modo que a CPU fique ocupada todo o tempo, não existe razão para
+                    usar outra organização mais complexa. </p>
+                <p>Em sistemas de tempo compartilhado, a situação é diferente: normalmente existem mais usuários do que memória para manter todos os processos (programas), de modo que é necessário manter os processos em excesso no disco. Para executar tais
+                    processos, é necessário que eles sejam trazidos para a memória principal. O movimento de processos da memória principal para o disco e vice-versa é denominado swapping.
+                </p>
+                <p>Nas alocações particionadas estática e dinâmica, um programa permanecia na memória principal até o final da sua execução, inclusive nos momentos em que esperava um evento, como uma operação de leitura ou gravação em periféricos. Em outras
+                    palavras, o programa somente sairia da memória principal quando tivesse terminada sua execução.</p>
+                <p>A técnica de swapping pode ser usada em sistemas multiprogramados com partições de tamanho variável. Desta forma, de acordo com algum critério, um programa pode ser movido da memória principal para o disco (swap out) e este mesmo programa
+                    pode voltar do disco para a memória principal (swap in), como se nada tivesse acontecido.</p>
+
+                <p>Para um maior aprofundamento no assunto, é relevante mencionar que o swapping é realizado por rotinas especiais do SO chamadas de relocadores ou swappers. A existência de relocadores em um sistema depende do tipo de gerenciamento de memória
+                    oferecido pelo SO. Uma explicação simplificada do trabalho realizado pelos relocadores é apresentada a seguir.</p>
+                <p>Seguindo instruções do SO, que detém o gerenciamento de memória e dos processos, um relocador pode ser comandado para retirar o conteúdo de uma área de memória, armazenando-a em disco. O que geralmente ocorre é que o relocador realiza
+                    uma cópia desta área de memória em um arquivo especial denominado arquivo de troca ou swap file. Ao copiar a área de memória para o disco, tal área é assinalada como livre, tornando disponível para outros processos. Também, é efetuado
+                    um registro do que foi copiado para a memória possibilitando a recuperação deste conteúdo.</p>
+                <p>A figura abaixo demonstra o esquema de swappers trabalhando com um processo no SO:</p>
+                <p>Em um sistema multiprogramado, podem existir vários processos prontos e vários bloqueados, e apenas um processo efetivamente em execução em determinado instante. Tal processo em execução pode solicitar áreas adicionais de memória. Esses
+                    novos pedidos de alocação de memória podem ser atendidos de duas formas: áreas efetivamente livres são cedidas ao processo ou aciona-se o relocador para liberação de áreas de memória pertencentes aos demais processos por meio da remoção
+                    de seu conteúdo para os arquivos de troca.</p>
+
+
+                <h3>Memória Virtual</h3>
+                <p>O conceito de relocação de memória possibilitou o desenvolvimento de um meio mais otimizado de utilização de memória chamado memória virtual. O conceito de memória virtual está fundamentado em desvincular o endereçamento feito pelo programa
+                    dos endereços físicos da memória principal. Assim, os programas e suas estruturas de dados deixam de estar limitados ao tamanho da memória física disponível.
+                </p>
+                <p>O termo memória virtual é normalmente associado com a habilidade de um sistema endereçar muito mais memória do que a fisicamente disponível. Este conceito surgiu em 1960 no computador Atlas, construído pela Universidade de Manchester (Inglaterra),
+                    embora sua utilização mais ampla tenha acontecido recentemente.</p>
+                <p>A memória virtual de um sistema é, de fato, o(s) arquivo(s) de troca ou swap file(s) gravado(s) no disco rígido. Portanto, a memória total de um sistema, que possui memória virtual, é a soma de sua memória física, de tamanho fixo, com
+                    a memória virtual. O tamanho da memória virtual, chamado de arquivo de paginação no Windows XP, é definido, basicamente, pelo menor valor entre os seguintes:
+                </p>
+                <ul>
+                    <li>Capacidade de endereçamento do processador.</li>
+                    <li>Capacidade de administração de endereços do SO.</li>
+                    <li>Capacidade de armazenamento dos dispositivos de armazenamento secundário (unidades de disco).
+                    </li>
+                </ul>
+
+                <h3>Espaço de Endereçamento Virtual</h3>
+                <p>Um programa no ambiente de memória virtual não faz referência a endereços físicos de memória (endereços reais), mas apenas a endereços virtuais. No momento da execução de uma instrução, o endereço virtual é traduzido para um endereço físico,
+                    pois o processador acessa apenas posições da memória principal.</p>
+                <p>O mecanismo de tradução do endereço virtual para endereço físico é denominado mapeamento. Esse mecanismo, nos sistemas atuais, é feito pelo hardware, com o auxílio do SO, e ele traduz um endereço localizado no espaço de endereçamento virtual
+                    para um endereço físico de memória, pois o programa executado em seu contexto precisa estar no espaço de endereçamento real para poder ser referenciado ou executado. Portanto, um programa não precisa estar necessariamente contíguo
+                    na memória real para ser executado.</p>
+                <p>O mecanismo de tradução se encarrega de manter tabelas de mapeamento exclusivas para cada processo, relacionando os endereços virtuais do processo às suas posições na memória física.</p>
+
+                <p>A memória virtual pode ser implementada por meio do uso dos mecanismos de paginação e segmentação. Atualmente, a paginação é o mecanismo mais utilizado na implementação de memória virtual, já a segmentação é uma alternativa menos utilizada,
+                    porém, é mais adequada do ponto de vista de programação. Há sistemas que utilizam ambas as técnicas.</p>
+
+
+                <h3>Paginação</h3>
+                <p>A paginação é uma técnica de gerenciamento de memória que utiliza o conceito de memória virtual, ou seja, a quantidade de endereçamento é maior do que o tamanho da memória fisicamente presente no sistema. Desta forma, o endereçamento global
+                    ou espaço de endereçamento virtual é dividido em pequenos blocos iguais conhecido como páginas virtuais.</p>
+                <p>Cada página possui um número que a identifica, e a memória física é dividida em blocos iguais, com o mesmo tamanho das páginas virtuais, chamado de molduras de páginas. As molduras de páginas são identificadas por um número e correspondem
+                    a determinada área da memória física. Todas as molduras de páginas são identificadas a partir do número zero.</p>
+                <p>Os endereços gerados por um programa em execução são chamados de endereços virtuais e formam o já mencionado espaço de endereçamento virtual. Seja o caso de um programa executar a seguinte instrução de certa linguagem de programação: MOV
+                    REG, 2060. Essa instrução, desta linguagem, diz que o conteúdo do endereço de memória 2060 deve ser copiado para o registrador REG.</p>
+                <p>O endereço 2060, gerado pelo programa, é, portanto, um endereço virtual. Em computadores sem o mecanismo de memória virtual, o endereço virtual é colocado diretamente no barramento da memória, e isto causará o acesso (leitura ou escrita)
+                    da palavra de memória física com o mesmo endereço. No caso de existir memória virtual, o endereço virtual vai para a MMU (Memory Management Unit – Unidade de Gerenciamento de Memória), um CI ou uma coleção de Cis (Circuitos Integrados)
+                    que faz o mapeamento dos endereços virtuais em endereços físicos.</p>
+
+                <p>Para que o esquema de divisão proposto pela paginação seja o SO, deve-se realizar o mapeamento de forma a identificar quais páginas virtuais estão presentes na memória física (em molduras de páginas) e quais estão localizadas na memória
+                    virtual do sistema (arquivo de troca). Tal mapeamento é feito por meio de tabelas de páginas que determinam a relação entre as páginas virtuais, do espaço de endereçamento virtual, e as molduras de páginas do espaço de endereçamento
+                    físico (real).</p>
+                <p>A figura abaixo demonstra o uso de espaço de endereçamento virtual e o mapeamento dos endereços virtuais para endereços físicos no espaço de endereçamento real da memória.</p>
+
+                <p>No momento do início da execução, as páginas virtuais saem da memória secundária para a memória principal e são colocadas nas molduras de páginas. Com o decorrer da execução dos programas, o SO relaciona as páginas virtuais com os programas
+                    em execução, sem levar em consideração o posicionamento contíguo de partes de um mesmo programa. </p>
+                <p>Quando ocorre a execução, a MMU traduz os endereços virtuais em endereços físicos, consultando as tabelas de páginas.</p>
+
+
+                <h3>Mapeamento de endereços virtuais em endereços físicos da memória</h3>
+                <p>O tamanho das páginas é de 1 KB. Perceba que o espaço de endereçamento virtual é o dobro do espaço real. Então, supondo a instrução mencionada anteriormente, o endereço virtual gerado pelo programa é 2060. </p>
+                <p>Esse endereço está na página virtual 2. A MMU, ao consultar a tabela de páginas, verifica que a página virtual 2 está mapeada na moldura de página 1. Deste modo, a MMU consegue fazer a conversão do endereço virtual para o endereço físico.
+                    O endereço virtual é formado pelo número da página virtual e um deslocamento dentro da página. Para obter o deslocamento, basta subtrair o endereço virtual da instrução do endereço virtual inicial da página virtual em questão. No exemplo
+                    da instrução MOV REG, 2060, tem-se:</p>
+                <ul>
+                    <li>Endereço virtual inicial da página virtual 2 = 2048 (2K);</li>
+                    <li>Endereço virtual da instrução = 2060;</li>
+                    <li>Deslocamento = 2060 – 2048 = 12.</li>
+                </ul>
+
+                <p>O endereço físico é calculado somando-se o endereço físico inicial da moldura de página, que está mapeada com a página virtual endereçada, com o deslocamento contido no endereço virtual.</p>
+
+                <p>Então, no exemplo:</p>
+
+                Endereço físico inicial da moldura de página 1 = 1024 (1K);<br> Deslocamento = 12;<br> Endereço físico = 1024 + 12 = 1036.
+
+                <p>Além da informação sobre a localização da página virtual, a entrada na tabela de páginas possui a informação se a página que contém o endereço referenciado está ou não na memória principal, por meio de um bit de validade. Se o bit tem
+                    o valor 0, isto indica que a página virtual não está na memória principal, mas, se for igual a 1, a página virtual está localizada na memória principal.</p>
+
+                <p>Os valores das entradas na tabela de páginas estão expressos em binário. O bit destacado dos demais é o bit de validade. Se a MMU identificar que uma página virtual não está mapeada na memória física (principal), como a página virtual
+                    6, ela realiza uma operação de falha de página (page fault). Quando isto ocorre, uma rotina do SO busca na memória virtual (arquivo de troca) a página necessária, trazendo-a para a memória física (swap in).</p>
+                <p>Esta operação é particularmente complexa quando não existe espaço livre na memória física.</p>
+                <p>Por exemplo, um programa endereçou a página virtual 6; como esta página não está mapeada na memória física e a memória está cheia, qual das páginas atualmente na memória deve ser removida para o disco (swap out)? Um grande problema da
+                    técnica de paginação é justamente este: a escolha da página atualmente na memória física que deve ser removida.</p>
+                <p>Existem diversos algoritmos adotados pelos SOs para a realocação de páginas, entre eles, pode-se citar:
+                </p>
+                <ul>
+                    <li> First-In, First-Out (FIFO): a página que primeiro foi utilizada será a primeira a ser selecionada.
+                    </li>
+                    <li>Least-Recently-Used (LRU): a página selecionada é a que está há mais tempo sem ser referenciada.
+                    </li>
+
+                    <li>Not-Recently-Used (NRU): a página selecionada é a que não foi recentemente utilizada.</li>
+
+                </ul>
+
+                <h3>Segmentação</h3>
+                <p>A segmentação é a técnica de gerenciamento de memória em que os programas são divididos logicamente em sub-rotinas e estruturas de dados e colocados em blocos de informações na memória. Os blocos têm tamanhos variáveis e são chamados segmentos,
+                    cada um com seu próprio espaço de endereçamento.</p>
+
+                <p>A grande diferença entre a paginação e a segmentação é que, enquanto a primeira divide o programa em partes de tamanho fixo, sem qualquer ligação com a estrutura do programa, a segmentação permite uma relação entre a lógica do programa
+                    e sua divisão na memória.</p>
+                <p>O mecanismo de mapeamento é muito semelhante ao da paginação. Além do endereço do segmento na memória física, cada entrada na tabela de segmentos possui informações sobre o tamanho do segmento e se ele está ou não na memória. Se as aplicações
+                    não estiverem divididas em módulos, grandes pedaços de código estarão na memória desnecessariamente, não permitindo que outros usuários também utilizem a memória.
+                </p>
+                <p>O problema da fragmentação também ocorre nesse modelo, quando as áreas livres são tão pequenas que não acomodam nenhum dado que necessite ser carregado. Logo, temos de conviver e minimizar os problemas de fragmentação durante a alocação
+                    ou, ainda, ter programas que auxiliem na desfragmentação da memória.</p>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>

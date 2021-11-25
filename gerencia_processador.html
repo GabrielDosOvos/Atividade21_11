@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sistema Operacional - Eduvale</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-12">
+                <h1 class="alert alert-info text-center">Aulas de Sistemas Operacionais</h1>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-3">
+                <div class="list-group">
+                    <a href="index.html" class="list-group-item ">Visão Geral dos Sistemas Operacionais</a>
+                    <a href="evolucao.html" class="list-group-item">A Evolução dos Sistemas Operacionais</a>
+                    <a href="ocorrencias.html" class="list-group-item">Concorrência</a>
+                    <a href="estrutura.html" class="list-group-item">Estrutura do Sistema Operacional</a>
+                    <a href="processo.html" class="list-group-item">Processo</a>
+                    <a href="thread.html" class="list-group-item">Thread</a>
+                    <a href="sincronizacao.html" class="list-group-item">Sincronização e Comunicação de Processos</a>
+                    <a href="gerencia_processador.html" class="list-group-item active">Gerencia do Processador</a>
+                    <a href="gerencia_memoria.html" class="list-group-item">Gerência de Memória</a>
+                    <a href="gerencia_dispositivos.html" class="list-group-item">Gerencia de dispositivos</a>
+                    <a href="gerencia_arquivos.html" class="list-group-item">Gerência de Sistema de Arquivos</a>
+                    <a href="multiplos_processarores.html" class="list-group-item">Sistemas com múltiplos processadores</a>
+                </div>
+            </div>
+
+            <div class="col-9">
+                <table id="sites-chrome-main" class="sites-layout-hbox" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td id="sites-canvas" style="border: none;">
+                                <div xmlns="http://www.w3.org/1999/xhtml" id="title-crumbs" style="">
+                                    <a href="/site/proffernandosiqueiraso/aulas" dir="ltr">Aulas</a>‎ &gt; ‎
+                                </div>
+                                <h3 xmlns="http://www.w3.org/1999/xhtml" id="sites-page-title-header" style="" align="left">
+                                    <span id="sites-page-title" dir="ltr" tabindex="-1" style="outline: none">8-Gerencia do Processador</span>
+                                </h3>
+                                <div class="sites-canvas-main">
+                                    <div id="sites-canvas-main-content">
+                                        <table xmlns="http://www.w3.org/1999/xhtml" class="sites-layout-name-one-column sites-layout-hbox" cellspacing="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="sites-layout-tile sites-tile-name-content-1">
+                                                        <div dir="ltr">
+                                                            <div>
+                                                                <div>
+                                                                    <div>
+                                                                        <div>
+                                                                            <div><b>Introdução</b><br><br></div>No sistemas multi programados onde existem vários processos em execução que compartilham recursos como memória, CPU, dispositivos de entrada e saída,
+                                                                            enfim, vários processos sendo executados pelo processador é fundamental a gerência do processador pelo sistema operacional.<br><br></div>A gerencia do processador permite garantir
+                                                                        o uso adequado do processador para atender ao diversos processos em execução pelo sistema operacional.<br><br></div>A partir do momento em que vários processos podem estar no estado
+                                                                    de pronto, critérios devem ser estabelecidos para determinar qual processo será escolhido para fazer uso do processador. Os critérios usados para a escolha compõem a chamada política
+                                                                    de escalonamento, que é a base da gerência do processador e da multi programação em um sistema operacional.<br><br></div><b>Funções básicas da Política de Escalonamento de Processos</b><br>
+                                                                <div><br></div>
+                                                                <div>A política de escalonamento de um sistema operacional tem diversas funções básicas:<br></div>
+                                                                <ul>
+                                                                    <li>Manter o processador ocupado a maior parte do tempo;</li>
+                                                                    <li>Balancear o uso da UCP entre os processos;</li>
+                                                                    <li>Privilegiar a execução de aplicações críticas;</li>
+                                                                    <li>Maximizar o throughput do sistema;</li>
+                                                                    <li>Oferecer tempos de resposta razoáveis;</li>
+                                                                </ul>
+                                                                <div><br></div>
+                                                                <div>Cada sistema operacional possui a sua própria política de escalonamento adequada ao seu propósito.<br><br></div>
+                                                                <div><b>A rotina Scheduler<br><br></b></div>
+                                                                <div>A rotina Scheduler tem como função implementar os critérios da política de escalonamento. Esta rotina também é chamada escalonador. Todo o compartilhamento do processador depende desta rotina.<br><br></div>
+                                                                <div><b>A rotina dispatcher<br><br></b></div>
+                                                                <div>A rotina dispatcher tem como função realizar a troca de contexto dos processos após o escalonador determinar qual processo deve fazer uso do processador. O tempo gasto com a troca de contexto
+                                                                    do processo é chamado latência do dispatcher.<br><br></div>
+                                                                <div>Em ambientes que implementam apenas processos ( seu suporte a threads ) o escalonamento é realizado com base nos processos prontos para execução. <br><br>Em sistemas que implementam threads,
+                                                                    o escalonamento é realizado considerando os threads no estado de pronto. Neste caso, podemos considerar o processo como sendo a unidade de alocação de recursos, enquanto o thread é a
+                                                                    unidade de escalonamento.<br><br></div>
+                                                                <div><b>Os critérios de escalonamento<br><br></b></div>
+                                                                <div>A política de escalonamento depende das características do sistema operacional. <br><br></div>
+                                                                <div>Em sistemas de tempo compartilhado o escalonamento trata todos os processos de forma igual, evitando, que um processo fique indefinidamente esperando pelo uso do processador.<br><br></div>
+                                                                <div>Em sistemas de tempo real o escalonamento sempre prioriza a execução de processos críticos , com alta prioridade, em detrimento de outros processos.<br><br></div>
+                                                                <div>Os principais critérios que são considerados em uma política de escalonamento são os seguintes;<br></div>
+                                                                <div><b><br></b></div>
+                                                                <ul>
+                                                                    <li><b>Utilização do processador</b></li>
+                                                                </ul>
+                                                            </div>
+                                                            <div style="margin-left:40px">Quase em todos os sistemas é esperado que o processador esteja a maior parte do tempo ocupado.<br><br></div>
+                                                            <div>
+                                                                <ul>
+                                                                    <li><b>Throughput</b></li>
+                                                                </ul>
+                                                                <p><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>&nbsp; Throughput representa o número de processos executados em um determinado intervalo de tempo.</p>
+                                                                <p><br></p>
+                                                                <ul>
+                                                                    <li><b>Tempo de Processador / Tempo de CPU</b></li>
+                                                                </ul>
+                                                                <p style="margin-left:40px">É o tempo que um processo leva no estado de execução durante seu processamento.&nbsp; A política de escalonamento não influencia este tempo que depende apenas do programa executado e do volume
+                                                                    de dados processado.</p>
+                                                                <p style="margin-left:40px"><br></p>
+                                                                <ul>
+                                                                    <li><b>Tempo de Espera</b></li>
+                                                                </ul>
+                                                                <p><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp;&nbsp; </span>Tempo de espera é o tempo total que um processo permanece na fila de pronto durante seu <span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span>processamento,
+                                                                    aguardando para ser executado.<br></p>
+                                                                <p><br></p>
+                                                                <ul>
+                                                                    <li><b>Tempo de Turnaround</b></li>
+                                                                </ul>
+                                                                <p><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp;&nbsp; </span>Tempo de turnaround é o tempo que um processo leva desde a sua criação até seu término.</p>
+                                                                <p><br></p>
+                                                                <ul>
+                                                                    <li><b>Tempo de Resposta</b></li>
+                                                                </ul>
+                                                                <div style="margin-left:40px">Tempo de resposta é o tempo decorrido entre uma requisição ao sistema e o instante em que a resposta é exibida.<br><br></div>
+                                                                <div style="margin-left:40px">Em todos os casos, uma política de escalonamento sempre busca otimizar o uso do processador e o throughput.<br><br></div>
+                                                                <div></div>
+                                                                <div><b>Escalonamento Não-Preemptivos e Preemptivos<br><br></b></div>
+                                                                <div>As políticas de escalonamento podem ser classificadas segundo a possibilidade de o sistema operacional interromper um processo em execução e troca-lo por outro processo, atividade essa conhecida
+                                                                    por preempção.<br><br></div>
+                                                                <div>Sistemas operacionais que implementam escalonamento com preempção são mais complexos, contudo permitem políticas de escalonamento mais flexíveis.<br><br></div>
+                                                                <div>O escalonamento Não-Preemptivo foi o primeiro tipo de escalonamento implementado nos sistemas operacionais multi programados, onde predominava processamento batch.<br><br></div>
+                                                                <div>No escalonamento Não-Preemptivo quando um processo em execução, um batch, nenhum evento externo pode provocar a perda do uso do processador. Ou seja, um processo em execução somente sai do
+                                                                    estado em execução quando termina seu processamento ou quando ocorre um erro grado por algum código do próprio processo.<br>&nbsp;<br></div>
+                                                                <div>No Escalonamento Preemptivo o sistema operacional pode interromper um processo em execução e passá-lo para o estado de pronto, para alocar outro processo na UCP. <br><br>Com o uso da Preempção
+                                                                    é possível ao sistema operacional priorizar a execução de processos, como no caso de aplicações de tempo real, onde o fator tempo é crítico. <br><br></div>
+                                                                <div>Outro benefício é a possibilidade de implementar políticas de escalonamento que compartilhem o processador de uma maneira mais uniforme, distribuindo de forma balanceada o uso da UCP pelos
+                                                                    processos.
+                                                                    <br><br></div>
+                                                                <div><b>Escalonamento firts-in-first-out ( FIFO )<br><br></b></div>
+                                                                <div>Neste escalonamento o processo que chegar primeiro ao estado de pronto é selecionado para execução. Os processos em estado pronto são colocados em uma fila de pronto. Quando o processo em
+                                                                    execução é colocado no estado de espera, o primeiro processo da fila pronto é selecionado para execução.<b><br></b></div>
+                                                                <div><b><br></b></div>
+                                                                <div><b>Escalonamento Shortest-Job_First ( SJF )<br></b></div>
+                                                                <div><br></div>
+                                                                <div>Neste escalonamento o processo que tiver o menor tempo de processador é selecionado para execução, ou seja, o processo que necessitar de menor tempo de UCP para terminar seu processamento
+                                                                    é selecionado para execução.<br><br><b>Escalonamento Cooperativo<br><br></b></div>
+                                                                <div>Neste escalonamento o processo em execução na UCP pode liberar o processador, retornando à fila de pronto e possibilitando que um outro processo seja escalonado. Desta forma, há uma cooperação
+                                                                    para uma melhor distribuição de uso do processador.<br><br></div>
+                                                                <div>As primeiras versões do sistema operacional Windows utilizavam este tipo de escalonamento.<br></div>
+                                                                <div><br></div>
+                                                                <div><b>Escalonamento Circular<br><br></b></div>
+                                                                <div>Neste<b> </b>escalonamento do tipo preemptivo, projetado especialmente para sistemas de tempo compartilhado. Este escalonamento é parecido com o escalonamento FIFO porem quando um processo
+                                                                    passa para o estado de execução existe um tempo-limite para o uso contínuo o processador, uma fatia de tempo para cada processo, chamada time-slice.<br><br><b>Escalonamento por Prioridades<br><br></b></div>
+                                                                <div>Neste<b> </b>escalonamento é feita preempção dos processos em execução na prioridade de cada processo. Este escalonamento foi projetado para sistemas de tempo real. Neste escalonamento o
+                                                                    processo com maior prioridade no estado de pronto é sempre o escolhido para execução, e processo com valores iguais são escalonados seguindo o critério de FIFO.<br><br>
+                                                                    <div style="display:block;text-align:center;margin-right:auto;margin-left:auto">
+                                                                        <a href="https://sites.google.com/site/proffernandosiqueiraso/aulas/8-gerencia-do-processador/escalonamento6.png?attredirects=0" imageanchor="1"><img src="https://sites.google.com/site/proffernandosiqueiraso/_/rsrc/1460947717236/aulas/8-gerencia-do-processador/escalonamento6.png" border="0"></a>
+                                                                    </div><br><br><b>Escalonamento Circular com Prioridades<br><br></b></div>
+                                                                <div>Este<b> </b>escalonamento implementa o conceito de fatia de tempo e de prioridade de execução associada a cada processo. Neste tipo de escalonamento, um processo permanece no estado de execução
+                                                                    até que termine seu processamento, voluntariamente passe para o estado de espera ou sofra uma preempção por tempo ou prioridade.<br><br></div>
+                                                                <div>A principal vantagem deste escalonamento é permitir o melhor balanceamento no uso do processador em sistemas de tempo compartilhado. <br><br>
+                                                                    <div style="display:block;text-align:center;margin-right:auto;margin-left:auto">
+                                                                        <a href="https://sites.google.com/site/proffernandosiqueiraso/aulas/8-gerencia-do-processador/escalonamento5.png?attredirects=0" imageanchor="1"><img src="https://sites.google.com/site/proffernandosiqueiraso/_/rsrc/1460947579728/aulas/8-gerencia-do-processador/escalonamento5.png" border="0"></a>
+                                                                    </div><br><br></div>
+                                                                <div><b>Escalonamento por Múltiplas Filas<br><br></b></div>
+                                                                <div>Neste escalonamento existem diversas filas de processos no estado de pronto, cada qual com uma prioridade específica. Os processos são associados às filas em função de características próprias,
+                                                                    como importância para a aplicação, tipo de processamento, área de memória necessária, etc.<br><br></div>
+                                                                <div>Neste escalonamento cada fila de processo no estado de pronto possui um mecanismo próprio de escalonamento. Uma fila pode usar o escalonamento por prioridades, outra fila pode usar o escalonamento
+                                                                    FIFO e assim por diante.<br><br></div>
+                                                                <div>Esta é a principal vantagem deste escalonamento que é permitir a convivência de mecanismos de escalonamento diferentes em um mesmo sistema operacional.<br><br>
+                                                                    <div style="display:block;text-align:center;margin-right:auto;margin-left:auto">
+                                                                        <a href="https://sites.google.com/site/proffernandosiqueiraso/aulas/8-gerencia-do-processador/escalonamento3.png?attredirects=0" imageanchor="1"><img src="https://sites.google.com/site/proffernandosiqueiraso/_/rsrc/1460947361388/aulas/8-gerencia-do-processador/escalonamento3.png" border="0"></a>
+                                                                    </div><br><br></div>
+                                                                <div><b>Escalonamento por Múltiplas Filas com Realimentação<br><br></b></div>
+                                                                <div>Neste escalonamento é semelhante ao escalonamento por múltiplas filas, porém os processos podem trocar de filas durante seu processamento. Sua grande vantagem é permitir ao sistema operacional
+                                                                    identificar dinamicamente o comportamento de cada processo, direcionando-o para filas com prioridade de execução e mecanismo de escalonamento mais adequados ao longo do seu processamento.<br><br></div>
+                                                                <div>O sistema operacional coloca o processo na fila que é mais adequada para seu processamento de forma eficiente de acordo com o comportamento do processo.<br><br>
+                                                                    <div style="display:block;text-align:center;margin-right:auto;margin-left:auto">
+                                                                        <a href="https://sites.google.com/site/proffernandosiqueiraso/aulas/8-gerencia-do-processador/escalonamento2.png?attredirects=0" imageanchor="1"><img src="https://sites.google.com/site/proffernandosiqueiraso/_/rsrc/1460947232418/aulas/8-gerencia-do-processador/escalonamento2.png" border="0"></a>
+                                                                    </div><br><br></div>
+                                                                <div><b>Política de Escalonamento em Sistemas de Tempo Compartilhado<br><br></b></div>
+                                                                <div>Nos sistemas de tempo compartilhado os usuários interagem com os sistemas interativamente, através de processos interativos, exigindo tempos de resposta baixos. A política de escalonamento
+                                                                    para este tipo de sistema deve considerar o compartilhamento dos recursos de forma equitativa para possibilitar o uso balanceado da UCP entre os processos.<b><br></b></div>
+                                                                <div><br></div>
+                                                                <div>Em um processo em que todos os processos sao tratados igualmente, processos CPU-bound levam vantagem sobre processos I-O bound no uso do processador<b>. </b>Como mostra a figura abaixo:<b><br><br><div style="display:block;text-align:center;margin-right:auto;margin-left:auto"><a href="https://sites.google.com/site/proffernandosiqueiraso/aulas/8-gerencia-do-processador/escalonamento1.png?attredirects=0" imageanchor="1"><img src="https://sites.google.com/site/proffernandosiqueiraso/_/rsrc/1460947087238/aulas/8-gerencia-do-processador/escalonamento1.png" border="0"></a></div><br><br><br></b></div>
+                                                                <div><b>Política de Escalonamento em Sistemas de Tempo Real</b><br><br>Diferente dos sistemas de tempo compartilhado, nos quais a aplicação não é prejudicada pela variação do tempo de resposta,
+                                                                    algumas aplicações exigem respostas imediatas para a execução de determinadas tarefas. O tempo de resposta é crítico para estas aplicações.&nbsp;</div>
+                                                                <div><br></div>
+                                                                <div>Neste caso, as aplicações devem ser executadas em sistemas operacionais de tempo real onde é garantida a execução de processos dentro de limites rígidos de tempo, sem o risco de comprometer
+                                                                    a tarefa a ser executada pela aplicação.</div>
+                                                                <div><br></div>
+                                                                <div>Em sistemas de tempo real, o escalonamento leva em consideração a importância relativa de cada tarefa da aplicação. Em função disso, o escalonamento por prioridades é o mais adequado, já
+                                                                    que para cada processo uma prioridade é associada em função da importância do processo dentro da aplicação.&nbsp;</div>
+                                                                <div><br></div>
+                                                                <div>No escalonamento para sistemas de tempo real não há o conceito de fatia de tempo e a prioridade de cada processo deve ser estática.</div>
+                                                                <div><b><br><br></b></div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!--
+                <h2></h2>
+                <p>No sistemas multiprogramados onde existem vários processos em execução que compartilham recursos como memória, CPU, dispositivos de entrada e saída, enfim, vários processos sendo executados pelo processador é fundamental a gerência do
+                    processador pelo sistema operacional. A gerencia do processador permite garantir o uso adequado do processador para atender ao diversos processos em execução pelo sistema operacional. A partir do momento em que vários processos podem
+                    estar no estado de pronto, critérios devem ser estabelecidos para determinar qual processo será escolhido para fazer uso do processador. Os critérios usados para a escolha compõem a chamada política de escalonamento, que é a base da
+                    gerência do processador e da multi programação em um sistema operacional.</p>
+
+                <p class="alert alert-success">Funções básicas da Política de Escalonamento de Processos</p>
+                <p>A política de escalonamento de um sistema operacional tem diversas funções básicas: Manter o processador ocupado a maior parte do tempo; Balancear o uso da UCP entre os processos; Privilegiar a execução de aplicações críticas; Maximizar
+                    o throughput do sistema; Oferecer tempos de resposta razoáveis; Cada sistema operacional possui a sua própria política de escalonamento adequada ao seu propósito.</p>
+                <p class="alert alert-danger"> A rotina Scheduler</p>
+                <p>A rotina Scheduler tem como função implementar os critérios da política de escalonamento. Esta rotina também é chamada escalonador. Todo o compartilhamento do processador depende desta rotina.</p>
+                <p class="alert alert-danger"> A rotina dispatcher</p>
+                <p>A rotina dispatcher tem como função realizar a troca de contexto dos processos após o escalonador determinar qual processo deve fazer uso do processador. O tempo gasto com a troca de contexto do processo é chamado latência do dispatcher.
+                    Em ambientes que implementam apenas processos ( seu suporte a threads ) o escalonamento é realizado com base nos processos prontos para execução. Em sistemas que implementam threads, o escalonamento é realizado considerando os threads
+                    no estado de pronto. Neste caso, podemos considerar o processo como sendo a unidade de alocação de recursos, enquanto o thread é a unidade de escalonamento.</p>
+                <p class="alert alert-success"> Os critérios de escalonamento</p>
+                <p>...</p>
+                <p class="alert alert-danger"> Escalonamento Não-Preemptivos e Preemptivos</p>
+                <p>...</p>
+                <p class="alert alert-danger"> Escalonamento firts-in-first-out ( FIFO )</p>
+                <p>...</p>
+                <p class="alert alert-success"> Escalonamento Shortest-Job_First ( SJF )</p>
+                <p>...</p>
+                <p class="alert alert-success"> Escalonamento Cooperativo</p>
+                <p>...</p>
+                <p class="alert alert-success"> Escalonamento Circular</p>
+                <p>...</p>
+                <p class="alert alert-success"> Escalonamento por Prioridades</p>
+                <p>...</p>
+                <p class="alert alert-danger"> Escalonamento Circular com Prioridades</p>
+                <p>...</p>
+                <p class="alert alert-danger"> Escalonamento por Múltiplas Filas</p>
+                <p>...</p>
+                <p class="alert alert-danger"> Escalonamento por Múltiplas Filas com Realimentação</p>
+                <p>...</p>
+                <p class="alert alert-danger"> Política de Escalonamento em Sistemas de Tempo Compartilhado</p>
+                <p>...</p>
+                <p class="alert alert-danger"> Política de Escalonamento em Sistemas de Tempo Real</p>
+                <p>...</p>-->
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>

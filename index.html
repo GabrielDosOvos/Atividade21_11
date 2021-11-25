@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sistema Operacional - Eduvale</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-12">
+                <h1 class="alert alert-info text-center">Aulas de Sistemas Operacionais</h1>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-3">
+
+                <div class="list-group">
+                    <a href="index.html" class="list-group-item active">Visão Geral dos Sistemas Operacionais</a>
+                    <a href="evolucao.html" class="list-group-item">A Evolução dos Sistemas Operacionais</a>
+                    <a href="ocorrencias.html" class="list-group-item">Concorrência</a>
+                    <a href="estrutura.html" class="list-group-item">Estrutura do Sistema Operacional</a>
+                    <a href="processo.html" class="list-group-item">Processo</a>
+                    <a href="thread.html" class="list-group-item">Thread</a>
+                    <a href="sincronizacao.html" class="list-group-item">Sincronização e Comunicação de Processos</a>
+                    <a href="gerencia_processador.html" class="list-group-item">Gerencia do Processador</a>
+                    <a href="gerencia_memoria.html" class="list-group-item">Gerência de Memória</a>
+                    <a href="gerencia_dispositivos.html" class="list-group-item">Gerencia de dispositivos</a>
+                    <a href="gerencia_arquivos.html" class="list-group-item">Gerência de Sistema de Arquivos</a>
+                    <a href="multiplos_processarores.html" class="list-group-item">Sistemas com múltiplos processadores</a>
+                </div>
+            </div>
+
+            <div class="col-9">
+                <h2 class="text-center alert alert-secondary">Visão Geral dos Sistemas Operacionais</h2>
+
+                <h3>Introdução</h3>
+
+                <p>Um sistema operacional é um conjunto de rotinas e serviços executado pelo computador que tem como objetivo facilitar o uso do computador pelo usuário e gerenciar e controlar o uso dos recursos do computador.</p>
+
+                <p><mark>O sistema operacional funciona como uma interface entre o usuário e o computador, tornando o uso do computador mais simples, eficiente e seguro.</mark></p>
+
+                <p>Para isso o computador controla o funcionamento do computador através do gerenciamento dos diversos recursos do computador tais como memória, processador, dispositivos de entrada e saída, etc.</p>
+
+                <p>Enquanto os programas do usuário são executados de forma linear, com inicio, meio e fim as rotinas e serviços do sistema operacional são executados de forma assíncrona e concorrente em função de eventos que podem ocorrer a qualquer momento.</p>
+
+                <h3>Funções de um Sistema Operacional</h3>
+
+
+                <p>Um sistema operacional possui duas funções principais a saber:</p>
+
+                <ul>
+                    <li>Facilidade de acesso aos recursos do computador;</li>
+                    <li>Compartilhamento dos recursos do computador de forma organizada e protegida;</li>
+
+                </ul>
+
+
+                <h3>Facilidade de acesso aos recursos do computador</h3>
+
+                <p>Um computador possui diversos recursos tais como memória, discos, impressora, gravador de dvd, etc.</p>
+
+                <p>Para que o usuário possa utilizar estes recursos ele solicita ao sistema operacional que execute uma operação que é executada sem que o usuário tenha que se preocupar com os detalhes de como a operação é executada ou como os recursos são
+                    utilizados durante a operação.</p>
+
+                <p>Se mais de um usuário solicitam a mesma operação ou recurso, é responsabilidade do sistema operacional administrar o compartilhamento de recursos.</p>
+
+                <p>O sistema operacional atua como uma interface entre os usuários e os recursos disponíveis no computador, facilitando a comunicação e a utilização de tais recursos.</p>
+
+                <h3>Compartilhamento de recursos de forma organizada e protegida</h3>
+
+                <p>Em sistemas onde diversos usuários acessam os mesmos recursos é necessário que exista um controle no uso destes recursos e que permita o compartilhamento dos recursos para os vários usuários. Esta também é uma responsabilidade do sistema
+                    operacional que deve controlar e gerenciar o acesso concorrente aos recursos do computador. Imagine uma impressora compartilhada em um departamento por vários funcionários que trabalham no departamento. A função de controlar e gerenciar
+                    o compartilhamento de recursos é necessária mesmo em sistemas mono usuário onde podemos ter a execução de mais de uma tarefa ao mesmo tempo. Nestes sistemas é também o sistema operacional que deve controlar o acesso concorrente aos
+                    recursos.
+                </p>
+
+                <h3>Uma máquina em camadas</h3>
+
+                <p>O computador pode ser entendido com uma máquina de camadas. Inicialmente temos duas camadas: o hardware e o sistema operacional, sendo que podem ser necessárias outras camadas para atender às necessidades do usuário.</p>
+
+                <p>Os computadores de primeira geração não faziam uso ainda dos sistemas operacionais o que obrigava as aplicações dos usuários a interagir diretamente com o hardware do computador. Com o surgimento dos primeiros sistemas operacionais, surgiu
+                    o conceito de maquina em camadas onde o sistema operacional é uma camada intermediária entre as aplicações dos usuários e o hardware do computador.</p>
+
+                <img src="imgs/sistemaoperacional1.png" style="display: block; margin: 0 auto;" alt="Estrutura aplicações e hardware">
+                <p>Na verdade existem várias camadas adicionais formadas por programas utilitários, bibliotecas, maquinas virtuais e micro programação. Na prática a máquina em camadas está mais para algo assim:</p>
+                <img src="imgs/sistemaoperacional2.png" style="display: block; margin: 0 auto;" alt="Separacao Hardware e Aplicativos">
+
+                <p>Em cada camada temo uma linguagem de programação diferente, variando entre as linguagens de baixo nível ( hardware ) e as linguagens de alto nível ( aplicativos e utilitários ).</p>
+
+                <h3>O sistema operacional facilitando o desenvolvimento de software</h3>
+
+                <p>O surgimento dos sistemas operacionais ajudou a acelerar o desenvolvimento de software. Não apenas facilitando o uso do computador e gerenciando os recursos mas também ajudando a simplificar a tarefa de desenvolver software.</p>
+
+                <p>Ocorre que nos primeiros computadores a programação era realizada em linguagem de máquina, 0 e 1, sendo uma tarefa muito difícil. O programador daquela época tinha que conhecer muito bem a arquitetura de hardware da máquina e isso não
+                    era fácil. Além disso, os programas eram escritos para computadores com uma arquitetura especifica. Se um programa fosse executado em outro computador com uma arquitetura diferente ele simplesmente não iria rodar. Isso comprometia
+                    muito a portabilidade dos programas que praticamente não existia.</p>
+
+                <p>O surgimento dos sistemas operacionais resolveu este problema tornando a interação com o hardware mais simples e eficiente. Não era mais necessário conhecer a arquitetura da máquina para se construir programas. O hardware tornou-se transparente
+                    para o usuário pois as aplicações agora interagem com o sistema operacional como se o hardware não existisse.</p>
+
+                <p>Os Recursos dos sistemas operacionais</p>
+
+                <p>Antes de prosseguir, é importante conhecer alguns conceitos básicos sobre recursos comuns nos sistemas operacionais.</p>
+
+                <ul>
+                    <li><b>Multiprocessamento</b> - É a capacidade de um sistema operacional realizar dois ou mais processos simultaneamente. Claro que para isso é necessário ter mais de um processador no computador. Não confundir com multi-tarefa pois esta
+                        apenas simula a execução simultânea de mais um processo basicamente compartilhando o tempo do processador com os processos em execução.</li>
+
+                    <li><b>Multi programação</b> - É a capacidade de um sistema operacional executar vários programas na memória simultaneamente.</li>
+
+                    <li><b>Time-sharing</b> - É a capacidade de um sistema operacional de compartilhar o uso do processador ao longo do tempo entre os vários processos em execução. Os processos são executados, um de cada vez, sequencialmente, mas como a fatia
+                        de tempo dada a cada processo é muito pequena, há a ilusão de que os processos estão sendo executados simultaneamente.</li>
+
+                    <li><b>Memória virtual</b> - É a capacidade de um sistema operacional de usar a memória secundária como um cache para armazenamento temporário, permitindo o compartilhamento seguro e eficiente da memória principal entre vários processos
+                        e também para remover as limitações de memória.</li>
+                </ul>
+                <h3>Histórico dos sistema operacionais</h3>
+
+                <p>A evolução dos sistemas operacionais está relacionada com a evolução dos computadores. Toda a vez que surge uma nova arquitetura de hardware ou mesmo uma evolução em uma determinada arquitetura, eis que surge a necessidade de se ter uma
+                    atualização no sistema operacional para que ele seja capaz de controlar e gerenciar os novos recursos da arquitetura de hardware de forma a permitir que as aplicações do usuário possam explorar os novos recursos.</p>
+
+                <p>Então vamos ver um resumo da história dos sistemas operacionais ao longo das décadas.</p>
+
+                <p>Nos anos 40 não haviam sistemas operacionais pois a programação era toda feita em linguagem de máquina. Nesta década surgiram os primeiros computadores eletrônicos tais como ENIAC e MARK I e que foram usados em aplicações militares durante
+                    a segunda guerra mundial. O problema era que a programação em linguagem de máquina demorava muito.</p>
+
+                <p>Nos anos 50 começaram a surgir os primeiros sistemas operacionais. Em 1953 a IBM lançou o computador IBM701 com o primeiro sistema operacional chamado monitor. A IBM ainda lançou outros sistemas operacionais para operações de entrada e
+                    saída ( input output control system ), todos para as máquinas IBM. A Inglaterra para não ficar para trás lançou um computador com um sistema operacional chamado Atlas com recursos tais como paginação por demanda para a transferência
+                    de dados da memória secundária para a memória principal.</p>
+
+                <p>Nos anos 60 houve uma evolução grande no hardware com o aparecimento do circuito integrado. Surgiram inovações nos sistemas operacionais tais como multiprocessamento, multi programação, time-sharing, memória virtual sendo que muitos daqueles
+                    avanços estão em uso até os dias de hoje. A IBM, a Burroughs, a Bell Labs e todos os demais fabricantes de computadores lançaram sistemas operacionais que tinham estes novos recursos.</p>
+
+                <p>Nos anos 70, com o aparecimento da tecnologia de integração em larga escala ( LSI e VLSI ) houve um avanço na miniaturização e no barateamento dos computadores e isso colaborou para o aparecimento dos primeiros microcomputadores. Nessa
+                    época o CP/M ( Control Program Monitor ) era o sistema operacional mais utilizado nos microcomputadores. Também surgiram sistemas operacionais com multiprocessamento para os microcomputadores.</p>
+
+                <p>Nos anos 80 surgiram os computadores de 16 bits e o sistema operacional PC-DOS utilizado nos microcomputadores padrão IBM-PC. O PC-DOS foi uma cópia evoluída do CP/M que desapareceu do mercado com o lançamento dos microcomputadores de
+                    16 bits todos com PC-DOC. Mas nem tudo era PC-DOS pois naqueles anos surgiram os primeiros super mini-computadores e mini-computadores que utilizaram o UNIX que era mais seguro, rápido, eficiente e seguro do que o PC-DOS. A partir
+                    de meados dos anos 80 surgiram os primeiros sistemas operacionais com interface gráfica nos microcomputadores da Apple. A microsoft cheia de inveja lançou um ambiente gráfico chamado Windows que rodava em cima do MS-DOS copiado do
+                    PC-DOS.
+                </p>
+
+                <p>Na década de 90, houve um grande aperfeiçoamento dos sistemas operacionais com interface gráfica e surgiu o filho do UNIX, o sistema operacional LINUX, mais eficiente, mais robusto, muito melhor em todos os aspectos do que o Windows que
+                    só se tornou sistema operacional de verdade em 1995 com o lançamento do Windows 95. A IBM tinha nessa década um sistema operacional excelente com interface gráfica, o OS/2. Infelizmente, este sistema operacional não foi adiante devido
+                    a falta de aplicativos para ele. Naqueles anos todo mundo lançava software somente para Windows e isso decretou a morte comercial do OS/2 que era o melhor de todos os sistemas operacionais com interface gráfica naquela época. O LINUX
+                    ganhou força e entrou no mundo corporativo, sendo muito usado em servidores por ser confiável, ter bom desempenho e ser mais seguro do que o Windows NT da microsoft.</p>
+
+                <p>Nos primeira década do século 21, tivemos um aperfeiçoamento dos sistema operacionais que passaram a executar tarefas de forma automática, correções, atualizações, de forma a facilitar a vida do usuário e a administração pelos administradores
+                    de rede. Surgiram também sistemas operacionais com processamento distribuído em mais de um processador que poderia estar em máquinas em redes diferente. A computação em grade ajudou a desenvolver esta capacidade nos sistemas operacionais.
+                    Surgiram os sistemas operacionais para dispositivos móveis e com suporte à redes sem fio e também os sistemas operacionais com suporte a processadores de 64 bits.</p>
+
+                <p>Nos anos 10 do seculo 21, surgiram os sistemas operacionais online que se configuram em um ambiente que roda diretamente no navegador e oferece serviços na nuvem para os usuários. Estes sistemas operacionais fazem uso de webservices, virtualização
+                    e computação em nuvem e ainda estão iniciando mas em breve deverão começar a substituir os sistemas operacionais desktop.</p>
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>

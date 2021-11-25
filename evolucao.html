@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sistema Operacional - Eduvale</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-12">
+                <h1 class="alert alert-info text-center">Aulas de Sistemas Operacionais</h1>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-3">
+
+                <div class="list-group">
+                    <a href="index.html" class="list-group-item ">Visão Geral dos Sistemas Operacionais</a>
+                    <a href="evolucao.html" class="list-group-item active">A Evolução dos Sistemas Operacionais</a>
+                    <a href="ocorrencias.html" class="list-group-item">Concorrência</a>
+                    <a href="estrutura.html" class="list-group-item">Estrutura do Sistema Operacional</a>
+                    <a href="processo.html" class="list-group-item">Processo</a>
+                    <a href="thread.html" class="list-group-item">Thread</a>
+                    <a href="sincronizacao.html" class="list-group-item">Sincronização e Comunicação de Processos</a>
+                    <a href="gerencia_processador.html" class="list-group-item">Gerencia do Processador</a>
+                    <a href="gerencia_memoria.html" class="list-group-item">Gerência de Memória</a>
+                    <a href="gerencia_dispositivos.html" class="list-group-item">Gerencia de dispositivos</a>
+                    <a href="gerencia_arquivos.html" class="list-group-item">Gerência de Sistema de Arquivos</a>
+                    <a href="multiplos_processarores.html" class="list-group-item">Sistemas com múltiplos processadores</a>
+                </div>
+            </div>
+
+            <div class="col-9">
+                <h2 class="text-center alert alert-secondary">A Evolução dos Sistemas Operacionais</h2>
+
+                <h3>Introdução</h3>
+
+                <p>
+                    Os sistemas operacionais evoluíram de acordo com a evolução dos computadores e de outras áreas como a área de telecomunicações. A cada nova geração de computadores novos sistemas operacionais vão sendo desenvolvidos para gerenciar e controlar os novos
+                    recursos de cada arquitetura de hardware e permitir o uso de novas tecnologias e processamento suportados pelas novas arquiteturas dos computadores.</p>
+
+                <p>
+                    Nesta aula vamos ver os diferentes tipos de sistemas operacionais, suas características, vantagens e desvantagens.</p>
+
+                <h3> Os Tipos de Sistemas Operacionais</h3>
+
+                <p>
+                    Os diferentes tipos de sistemas operacionais existentes são os seguintes:</p>
+                <ul>
+                    <li>Sistemas Mono programáveis/Mono tarefa</li>
+                    <li>Sistemas multiprogramados/multitarefa</li>
+                    <li>Sistemas com múltiplos processadores</li>
+                </ul>
+
+                <p>
+                    Cada tipos de sistema operacional reflete a arquitetura de hardware e de telecomunicações de sua época.</p>
+
+                <h3> Sistemas Mono programáveis/Mono tarefa</h3>
+                <p>
+                    Este tipo de sistema operacional permite que apenas um programa seja armazenado na memória para execução. Os demais programas devem aguardar o término da execução do programa que está em memória. Todos os recursos do computador permanecem exclusivamente
+                    dedicados ao único programa que está em memória. Este sistema operacional permite portanto a execução de uma única tarefa de cada vez, alocando de forma exclusiva todos os recursos do computador, sendo chamado por isso de sistema mono
+                    tarefa.
+                </p>
+                <p>
+                    São sistemas operacionais mais simples de serem implementados pois não se preocupam em tratar de gerenciar o compartilhamento dos recursos pelos programas sendo executados, pois há somente um único programa sendo executado em um dado momento. Não existe
+                    preocupação em gerenciar se existem dois programas enviando dados para a impressora ou gravando informações no disco. </p>
+                <p>
+                    Entretanto, este tipo de sistema operacional permite que os recursos fiquem ociosos quando não estão sendo utilizados pelo programa em execução. Se o programa em execução não acessar o disco durante sua execução então este recurso ficará ocioso quando
+                    poderia estar sendo utilizado por um outro programa em uma outra tarefa.</p>
+                <p>
+                    Os sistemas operacionais mono programáveis/mono tarefa foram os primeiros sistemas operacionais e foram utilizados pelos computadores nos anos 60. Foram utilizados também nos microcomputadores e estações de trabalho, lançados nos anos 70 e que eram projetados
+                    para uso por apenas um usuário.</p>
+                <p>
+                    Atualmente este tipo de sistema operacional já não é usado mesmo em computadores pessoais pois há necessidade de se realizar mais de uma tarefa ao mesmo tempo.</p>
+                <h3> Sistemas multiprogramados/multitarefa</h3>
+                <p>
+                    Este tipo de sistema operacional é uma evolução dos sistemas operacionais mono programados/mono tarefa. Enquanto os sistemas operacionais mono programados/mono tarefa permitiam apenas a execução de um único programa, uma única tarefa, os sistemas multiprogramados/multitarefas
+                    permitem que vários programas sejam executados compartilhando os recursos do computador tais como discos, impressora, memória e processador. </p>
+                <p>
+                    Neste sistema enquanto um programa espera uma entrada de dados pelo usuário um outro programa pode estar sendo processado no mesmo intervalo de tempo. Neste caso tanto a memória quanto o processador são compartilhados e o sistema operacional deve gerenciar
+                    e controlar este compartilhamento dos recursos de forma segura e protegida. Como existem vários programas sendo executados, várias tarefas, é função do sistema operacional garantir que um programa não afete o outro, permitindo a execução
+                    das tarefas de forma independente umas das outras.</p>
+                <p>
+                    Por permitir o compartilhamento dos recursos pelas várias tarefas sendo executadas este tipo de sistema operacional possibilita a redução de custos em hardware. Entretanto, os sistemas multiprogramados/multitarefa são de implementação muito mais complexa,
+                    por ser necessário o gerenciamento e controle de todas as tarefas em execução e do compartilhamento dos recursos entre as tarefas</p>
+                <h3> Classificação dos sistemas multiprogramados/multitarefa</h3>
+                <p>
+                    Os sistemas multiprogramados podem ser classificados de duas formas:</p>
+                <p>
+                    Pelo número de usuários que interage com o sistema operacional;</p>
+                <p>
+                    Pela forma como as tarefas são gerenciadas;</p>
+                <p>
+                    Com relação ao número de usuários, os sistemas multiprogramados podem ser: monousuário ou multiusuário. Os sistema multiprogramados monousuário são usados em computadores pessoais e estações de trabalho onde um usuário pode realizar várias tarefas como
+                    acessar a internet, enviar um e-mail e editar um documento. Os sistemas multiprogramados multiusuários são sistemas acessados por vários usuários que interagem com o sistema operacional realizando várias tarefas. É o caso de sistemas
+                    UNIX em minicomputadores e super minicomputadores.</p>
+                <p>
+                    Com relação a forma como as tarefas são gerenciadas, os sistemas multiprogramados podem ser: </p>
+                <ul>
+                    <li>Sistemas Bach</li>
+                    <li>Sistemas de Tempo compartilhado ( Time-Sharing ) </li>
+                    <li>Sistemas de Tempo real ( real time ). </li>
+                </ul>
+
+
+
+                <p>
+                    Um sistema operacional multiprogramado pode suportar uma ou mais formas de gerenciamento de tarefa.</p>
+
+                <h3> Sistemas multiprogramados Bach</h3>
+                <p>Foram os primeiros sistemas operacionais multiprogramados e foram utilizados nos anos 60. Neste tipo de sistema os programas, chamados de jobs, aguardavam disponibilidade de memória principal para serem executados. </p>
+                <p>
+                    Se houve memória principal disponível mais de um programa era executado. Se não houvesse memória principal disponível, os programas ficavam em uma fila, aguardando a disponibilidade para serem processados. </p>
+                <p>
+                    Neste sistema não havia desperdício de recursos como a memória principal e mais de um programa podia ser executado. Neste tipo de processamento não há interação com o usuário com os programas. Todas as entradas e saídas de dados são executadas com memória
+                    secundária ( discos, fitas ). Este tipo de sistema operacional permite melhor utilização do processador.</p>
+
+                <h3> Sistemas multiprogramados de tempo compartilhado</h3>
+                <p>Permitem a execução de várias tarefas pela divisão de tempo do uso do processador em pequenos intervalos de tempo denominados fatia de tempo ( time slice ). Os programas em execução se alternam no uso do processador, cada programa em execução
+                    fazendo uso de sua fatia de tempo. Desta forma, o tempo de uso do processador é compartilhado pelas várias tarefas em execução pelo sistema operacional. Por este motivo. estes sistemas também são chamados de sistemas time-sharing.</p>
+                <p>
+                    Quando um programa termina seu intervalo de tempo de uso do processador ele é interrompido pelo sistema operacional, sendo substituído por outro programa e fica aguardando um novo intervalo de tempo para ter sua execução reiniciada do ponto onde foi interrompido.
+                </p>
+                <p>
+                    Este tipo de sistema permite a interação dos usuários com as aplicações através de monitor, teclado e mouse. O sistema operacional possui uma linguagem de comandos que são usados pelo usuário para interagir com o sistema operacional. Os comandos são digitados
+                    em uma interface de linha de comandos ou em uma interface gráfica com o uso de mouse. Por permitir a interação entre o usuário com as aplicações, estes sistemas também são conhecidos por sistemas online.</p>
+                <p>
+                    Observação: Atualmente todos os sistemas operacionais fazem uso de interface gráfica para interação com o usuário, porém a interface de linha de comandos também está presente em todos os sistemas operacionais. É muito importante conhecer a linguagem de
+                    comandos de um sistema operacional e fazer uso da interface de linha de comandos.</p>
+
+                <h3> Sistemas multiprogramados de tempo real</h3>
+                <p>Permitem a execução de várias tarefas de acordo com a prioridade de execução de cada tarefa. A diferença entre os sistemas de tempo real e os sistemas de tempo compartilhado é que nos sistemas de tempo compartilhado o tempo de resposta
+                    pode variar um pouco sem no entanto comprometer a execução das tarefas, enquanto que nos sistemas de tempo real o tempo de resposta é rigidamente controlado e devem estar dentro de limites de tempo definidos que devem ser obedecidos
+                    caso contrário podem ocorrer problemas irreparáveis as aplicações. Costuma-se dizer que estes sistemas tem tempo de resposta quase instantâneo por isso são conhecidos por sistemas de tempo real.
+                </p>
+
+                <p>
+                    Em sistemas de tempo real não existe fatia de tempo para as tarefas em execução. O mecanismo utilizado para o compartilhamento do processador é a prioridade. Uma tarefa permanece em execução pelo processador o tempo que for necessário, até que outra tarefa
+                    com maior prioridade seja iniciada. A prioridade de execução das tarefas é determinada pela aplicação e não pelo sistema operacional.</p>
+                <p>
+                    Estes sistemas são usados para aplicações críticas como controle de refinarias, controle de tráfego aéreo, sistemas de defesa, usinas termoelétricas, usinas nucleares, etc. Nestes sistemas o tempo de resposta é crítico para o controle de operações. Por
+                    isso são usados sistemas de tempo real.</p>
+                <h3> Sistemas com múltiplos processadores</h3>
+                <p>
+                    O sistemas com múltiplos processadores caracterizam-se por ter mais uma CPU interligadas e trabalhando com conjunto. Desta forma é possível a execução simultânea de mais de uma tarefa ou a divisão de uma tarefa em partes que são executadas simultaneamente
+                    em mais de um processador.</p>
+                <p>
+                    Os sistemas com multiplos processadores incorporam todos os recursos dos sistemas multiprogramados/multitarefas e acrescentam novas características e vantagens tais como escalabilidade, maior disponibilidade e balanceamento de carga.</p>
+                <p>
+                    A Escalabilidade permite aumentar o poder de processamento com a adição de novos recursos a um computador. Nestes sistemas pode-se adicionar novos processadores para ganho de processamento.</p>
+                <p>
+                    A maior disponibilidade é garantida nestes sistemas pois em caso de falha de um processador outros processadores assumem a tarefa sem que haja as aplicações em execução sejam afetadas, garantindo desta forma a alta disponibilidade de aplicações.</p>
+                <p>
+                    O Balanceamento de carga permite uma melhor distribuição de tarefas entre os diversos processadores disponíveis, melhorando o desempenho geral do sistema.</p>
+                <p>
+                    Estes sistemas são usados par aplicações que requerem uso intenso da CPU tais como simulações, processamento de imagens, processamento científico, prospecção de petróleo, pesquisa aerospacial, etc. São aplicações que existem muito processamento e são
+                    beneficiadas pelo uso de mais de um processador.</p>
+
+                <h3> Classificação dos Sistemas com múltiplos processadores</h3>
+                <p>
+                    Em sistemas com múltiplos processadores temos vários processadores executando tarefas simultaneamente e compartilhando a memória principal e os demais recursos do computador. a forma de comunicação destes processadores e o grau compartilhamento da memória
+                    e demais recursos são fatores que levam os sistemas com múltiplos processadores a serem classificados em sistemas fortemente acoplados e sistemas fracamente acoplados.</p>
+                <p>
+                    Em sistemas fortemente acoplados temos uma única memória principal sendo compartilhada por todos os processadores. Já em sistemas fracamente acoplados, cada sistema tem sua memória individual.</p>
+
+                <h3> Sistemas fortemente acoplados</h3>
+                <p>
+                    Neste sistema temos vários processadores compartilhando uma única memória física e os demais recursos ( discos, impressora, unidade de fita ) sendo gerenciados por um único sistema operacional. Por terem essas características são conhecidos como multiprocessadores.</p>
+                <p>
+                    Os sistemas fortemente acoplados possuem taxa de transferência de dados muito maior do que os sistemas fracamente acoplados.</p>
+
+                <h3> Sistemas fracamente acoplados</h3>
+                <p>
+                    Neste sistema existem dois ou mais sistemas computacionais conectados através de linhas de comunicação. Um sistema computacional é um conjunto de dispositivos de hardware capaz de realizar processamento. Neste caso cada sistema computacional possui alem
+                    dos processadores sua própria memória principal e seus próprios recursos. </p>
+                <p>
+                    Desta forma, cada sistema computacional é totalmente independente possuindo seu próprio sistema operacional e seus próprios recursos tais como CPU, memoria secundaria, dispositivos de entrada e saída. Os sistemas computacionais são interligados e permitem
+                    que os vários processadores trabalhem em uma mesma tarefa ou várias tarefas simultaneamente.</p>
+                <p>
+                    Por terem estas características estes sistemas são chamados de multicomputadores.</p>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sistema Operacional - Eduvale</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-12">
+                <h1 class="alert alert-info text-center">Aulas de Sistemas Operacionais</h1>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-3">
+
+                <div class="list-group">
+                    <a href="index.html" class="list-group-item ">Visão Geral dos Sistemas Operacionais</a>
+                    <a href="evolucao.html" class="list-group-item">A Evolução dos Sistemas Operacionais</a>
+                    <a href="ocorrencias.html" class="list-group-item">Concorrência</a>
+                    <a href="estrutura.html" class="list-group-item">Estrutura do Sistema Operacional</a>
+                    <a href="processo.html" class="list-group-item">Processo</a>
+                    <a href="thread.html" class="list-group-item">Thread</a>
+                    <a href="sincronizacao.html" class="list-group-item">Sincronização e Comunicação de Processos</a>
+                    <a href="gerencia_processador.html" class="list-group-item">Gerencia do Processador</a>
+                    <a href="gerencia_memoria.html" class="list-group-item active">Gerência de Memória</a>
+                    <a href="gerencia_dispositivos.html" class="list-group-item">Gerencia de dispositivos</a>
+                    <a href="gerencia_arquivos.html" class="list-group-item">Gerência de Sistema de Arquivos</a>
+                    <a href="multiplos_processarores.html" class="list-group-item">Sistemas com múltiplos processadores</a>
+                </div>
+            </div>
+
+            <div class="col-9">
+                <h2 class="text-center alert alert-secondary">Gerência de Memória 2</h2>
+
+                <h3> Introdução</h3>
+                <ul>
+                    <li>Na memória principal residem os programas em execução.</li>
+
+                    <li>Memória secundária são mecanismos de armazenamento permanente, são mais abundantes e baratas.</li>
+                    <li>Para um programa ser executado deve ser carregado na memória principal.</li>
+                    <li>Gerenciamento complexo em sistemas multiprogramáveis com múltiplos usuários utilizando-a eficientemente.</li>
+                </ul>
+                <h3> Alocação Contígua Simples</h3>
+                <ul>
+                    <li>Implementada nos primeiros Sistemas Operacionais e ainda existentes em alguns sistemas monoprogramáveis.</li>
+                    <li>Memória dividida em duas partes, Sistema Operacional e programa do usuário.</li>
+                    <li>O programador tem controle sobre toda a memória principal, podendo acessar qualquer posição da memória, inclusive onde está residente o Sistema Operacional.</li>
+                    <li>Um mecanismo de proteção utilizado é delimitar a área do Sistema Operacional que delimita a área do mesmo.</li>
+                    <li>Fácil implementação e código reduzido, porém Ineficiência no uso do processador e da memória pois apenas um usuário pode dispor desse recurso.</li>
+                    <li>Programas limitados ao tamanho da memória disponível.</li>
+                    <li>Overlay (sobreposição) – Solução encontrada para dividir o programa em partes (módulos), de forma que pudessem executar independentemente uma da outra, utilizando uma mesma área de memória.</li>
+                    <li>A definição das áreas de Overlay são de responsabilidade do programador através de comandos específicos da linguagem utilizada.</li>
+                </ul>
+                <h3> Alocação Particionada</h3>
+                <ul>
+                    <li>A eficiência da multiprogramação exige que vários programas estejam na memória ao mesmo tempo, vindo a necessidade de organização da memória.</li>
+                </ul>
+
+
+                <h4>Alocação Particionada Estática:</h4>
+                <ul>
+                    <li>Divisão da memória em tamanhos fixos (partições) definidos na inicialização do Sistema em função dos programas que executariam no ambiente.</li>
+                    <li>A alteração do tamanho de uma partição necessita a inicialização do Sistema Operacional.</li>
+                    <li>Os programas só podiam executar em uma das partições, mesmo com outras disponíveis.</li>
+                    <li>Limitações impostas pelos compiladores e montadores que geravam apenas códigos absolutos.</li>
+                    <li>Posteriormente, evolução dos compiladores, linkers e loaders com geração de código realocável, sendo que os programas puderam ser carregados em qualquer partição (alocação particionada estática realocável).</li>
+                    <li>Surgimento da tabela de partições com informações de tamanho, uso e delimitações.</li>
+                    <li>Proteção da memória através de dois registradores, início e fim da partição.</li>
+                    <li>Os programas não preenchiam totalmente as partições onde eram carregados.</li>
+                    <li>Problemas de fragmentação.</li>
+                </ul>
+
+                <h4>Alocação Particionada Dinâmica</h4>
+                <ul>
+                    <li>Aumento do grau de compartilhamento diminuindo o problema da fragmentação.</li>
+                    <li>Partições sem tamanho fixo, onde cada programa utiliza o espaço que necessita.</li>
+                    <li>Existe ainda o problema de fragmentação, conforme os programas vão terminando e deixando espaços cada vez menores.</li>
+                    <li>Soluções para resolver o problema de fragmentação:</li>
+                    <ul>
+                        <li>Primeira – Reunir os espaços adjacentes, produzindo um único espaço de tamanho maior.</li>
+                        <li>Segunda – Realocação de todas as partições ocupadas, eliminando todos os espaços entre elas (alocação dinâmica com realocação), porém, aumentando a complexibilidade do algoritmo e consumindo mais recursos do sistema.</li>
+                    </ul>
+                </ul>
+                <h4>Estratégias para Escolha da Partição</h4>
+                <ul>
+                    <li>Função para determinar em qual partição livre um programa será carregado para execução.</li>
+                    <li>Função de evitar, ou diminuir, o problema da fragmentação antes que ele ocorra.</li>
+                    <li>O tamanho do programa é o fator mais importante para a adoção da melhor estratégia.</li>
+                    <li>Best-fit:</li>
+                    <ul>
+                        <li>Escolhe a melhor partição, ou seja, aquela que o programa deixa o menor espaço sem utilização.</li>
+                        <li>Lista de áreas livres alocada por tamanho, diminuindo o tempo de busca</li>
+                        <li>Desvantagem de deixar pequenas áreas não contíguas, aumentando o problema da fragmentação.</li>
+                    </ul>
+                    <li>Worst-fit:</li>
+                    <ul>
+                        <li>Escolhe a pior partição, ou seja, aquela que o programa deixa o maior espaço sem utilização.</li>
+                        <li>Diminui o problema de fragmentação, deixando espaços livres maiores que permitem a um maior número de programas utilizar a memória.</li>
+                    </ul>
+                    <li>First-fit:</li>
+                    <ul>
+                        <li>Escolhe a primeira partição livre de tamanho suficiente para carregar o programa</li>
+                        <li> Lista de áreas livres ordenada por endereços crescentemente.</li>
+                        <li>Grande chance de se obter uma grande partição livre nos endereços de memórias mais altos.</li>
+                        <li>Mais rápida e consome menos recursos do sistema.</li>
+                    </ul>
+                </ul>
+                <h3> Swapping</h3>
+                <ul>
+                    <li>Tenta resolver o problema de insuficiência da memória para todos os usuários.</li>
+                    <li>Aloca espaço para programas que esperam por memória livre para serem processados.</li>
+                    <li>O sistema escolhe um programa residente, que é levado da memória para o disco (swap out), retornando posteriormente para a memória principal (swap in) como se nada tivesse ocorrido.</li>
+                    <li>Problema da realocação dos programas. O loader realocável permite que um programa seja colocado em qualquer posição da memória, porém a realocação é realizada no momento do carregamento.</li>
+                    <li>Mecanismo ineficiente em função do tempo gasto para carregamento.</li>
+                    <li>Uma alternativa é esperar que a região de memória usada pelo programa na ocasião do seu primeiro carregamento esteja disponível.</li>
+                    <li>Realocação Dinâmica:</li>
+                    <ul>
+                        <li>É a melhor solução, uma implementação no hardware dos computadores, permitindo que a realocação seja realizada durante a execução do programa.</li>
+                        <li>Realizada através de um registrador especial denomidado registrador de alocação, que recebe o endereço inicial da região da memória que o programa irá ocupar no momento do carregamento do programa na memória.</li>
+                        <li>Toda vez que ocorrer uma referência a algum endereço, o endereço contido na instrução será somado ao conteúdo do registrador, gerando assim, o endereço físico.</li>
+                    </ul>
+                    <li>Essencial para a implementação de um sistema multiprogramável.</li>
+                    <li>Permitiu um maior throughput através de um maior compartilhamento da memória.</li>
+                    <li>Mais eficiente para programas onde existiam poucos usuários competindo por memória e em ambientes que trabalhavam com aplicações pequenas.</li>
+                    <li>Seu maior problema é o elevado custo das operações de entrada/saída (swapped in/out).</li>
+                </ul>
+                <h3> Memória Virtual</h3>
+                <ul>
+                    <li>Combina memória principal e secundária;</li>
+                    <li>Impressão da memória ser muito maior do que é;</li>
+                    <li>Desvinculação do endereçamento feito pelo programa dos endereços físicos da memória principal;</li>
+                    <li>Procura minimizar o problema de fragmentação da memória.</li>
+                </ul>
+                <h4>Espaço de Endereçamento Virtual</h4>
+                <ul>
+                    <li>Conceito próximo a vetores em linguagens de alto nível;</li>
+                    <li>Referência a um componente do vetor sem preocupação com a posição da memória onde o dado está;</li>
+                    <li>Programa no ambiente de memória virtual não faz referência a endereços físicos de memória (endereços reais), mas apenas a endereços virtuais;</li>
+                    <li>Mapeamento – é a tradução do endereço virtual para o físico;</li>
+                    <li>Espaço de endereçamento virtual – é o conjunto de endereços virtuais que os processos podem endereçar.</li>
+                    <li>Espaço de endereçamento real – é o conjunto de endereços reais.</li>
+                    <li>Apenas parte do programa pode estar residente na memória em um determinado instante;</li>
+                    <li>O Sistema Operacional utiliza a memória secundária como uma extensão da memória principal.</li>
+                </ul>
+                <h4>Mapeamento</h4>
+                <ul>
+                    <li>Mecanismo que transforma os endereços virtuais em endereços reais;</li>
+                    <li>Todo programa precisa estar no espaços de endereçamento real para poder ser referenciado ou executado;</li>
+                    <li>Atualmente, o mapeamento é realizado via hardware junto com o Sistema Operacional, de forma a não comprometer seu desempenho e torná-lo transparente aos usuários e suas aplicações;</li>
+                    <li>A maioria das aplicações tende a fazer referência a um reduzido número de páginas, logo, somente uma pequena fração da tabela de páginas é necessária.</li>
+                    <li>Memória associativa ou Translation Lookside Buffer – Hardware especial para mapear endereços virtuais para endereços físicos sem a necessidade de acesso à tabelas de páginas;</li>
+                    <li>Quando um programa está em execução, existe uma tabela de mapeamento do processo no qual o programa executa. Se outro programa for executado no contexto de outro processo, o sistema deve passar a referenciar a tabela do novo processo.
+                        Toda vez que há mudança de contexto, o registrador é atualizado com o endereço da nova tabela.</li>
+                </ul>
+                <h4>Paginação</h4>
+                <ul>
+                    <li>Técnica de gerência de memória onde o espaço de endereçamento virtual e o espaço de endereçamento real são divididos em blocos do mesmo tamanho (páginas);</li>
+                    <li>Páginas virtuais no espaço virtual e páginas reais ou frames (molduras) no espaço real;</li>
+                    <li>Todo mapeamento é realizado a nível de página, através de tabelas de páginas, em que cada página virtual do processo possui uma entrada na tabela ETP;</li>
+                    <li>Paginação por demanda é quando as páginas dos processos são transferidas da memória secundária para a principal apenas quando são referenciadas.</li>
+                    <li>Paginação Antecipada é o carregamento de páginas na memória antecipadamente, sendo que o sistema tenta prever as páginas que serão necessárias à execução do programa.</li>
+                    <li>ALGORÍTMO DA PAGINAÇÃO.</li>
+                </ul>
+                <h5>Working Set</h5>
+                <ul>
+                    <li>Problemas:</li>
+                    <ul>
+                        <li>Paginação exigem operações de E/S (que deve ser evitado) quando um processo faz referência a uma página que não se encontra na memória;</li>
+                        <li>O Sistema Operacional deve se preocupar em ter um certo número de páginas na memória que reduza ao máximo a taxa de paginação dos processos e não prejudique os demais processos que desejam acesso a memória.</li>
+                    </ul>
+                    <li>Observações:</li>
+                    <ul>
+                        <li>Quando um programa começa a ser executado, percebe-se uma elevada taxa de page faults (páginas que não se encontram na memória), que se estabiliza com o decorrer de sua execução.</li>
+                        <li>Localidade é a tendência que existe em um programa de fazer referências a posições de memória de forma quase uniforme, ou seja, instruções próximas.</li>
+                        <li>A partir da observação da localidade Denning formulou o modelo de working set.</li>
+                    </ul>
+                    <li>Working Set de um processo é o conjunto de páginas referenciadas por ele durante determinado intervalo de tempo, ou, segundo Denning, é o conjunto de páginas constantemente referenciadas pelo processo, devendo permanecer na memória
+                        principal para que execute de forma eficiente, evitando a elevada taxa de paginação (thrashing).</li>
+                    <li>Sempre que um processo é criado, todas as suas páginas estão na memória secundária.</li>
+                    <li>O Working Set deve Ter um limite máximo de páginas permitidas.</li>
+                </ul>
+                <h5>Realocação de Páginas</h5>
+                <ul>
+                    <li>Problema em decidir quais páginas remover da memória principal.</li>
+                    <li>O Sistema Operacional deve considerar se uma página foi ou não modificada antes de liberá-la para outro processo, caso contrário, possíveis dados armazenados na página serão perdidos.</li>
+                    <li>Sempre que uma página é alterada, um bit de modificação é alterado de 0 para 1, informando que a página foi alterada.</li>
+                    <li>Melhor estratégia de realocação é escolher uma página que não será referenciada num futuro próximo. Tarefa difícil para o Sistema Operacional.</li>
+                    <li>Principais estratégias usadas pelos sistemas operacionais para realocação de páginas:</li>
+                    <ul>
+                        <li>Aleatória (random):</li>
+                        <ul>
+                            <li>Não utiliza nenhum critério de seleção.</li>
+                            <li>Consome menos recursos do sistema.</li>
+                            <li>Raramente é utilizada.</li>
+                        </ul>
+
+                        <li>First-In-First-Out (FIFO):</li>
+                        <ul>
+                            <li>A página que primeiro foi utilizada será a primeira a ser escolhida.</li>
+                            <li>Implementação bastante simples.</li>
+                            <li>Necessário apenas uma fila. </li>
+                        </ul>
+                        <li>Least-Recently-Used (LRU):</li>
+                        <ul>
+                            <li>Seleciona a página utilizada menos recentemente, ou seja, a que está há mais tempo sem ser referenciada.</li>
+                            <li>Estratégia boa, mas pouco implementada;</li>
+                            <li>Grande overhead causado pela atualização, em cada página referenciada, do momento do último acesso, além do algoritmo de busca dessas páginas. </li>
+                        </ul>
+                        <li>Not-Recently-Used (NRU):</li>
+                        <ul>
+                            <li>Escolha da página que não foi recentemente utilizada (semelhante ao LRU).</li>
+                            <li>Flag de referência – indica quando a página foi referenciada ou não.</li>
+                            <li>Inicialmente, todas as páginas estão com o flag = 0, à medida que as páginas são referenciadas, o flag é modificado para 1. </li>
+                        </ul>
+                        <li>Last-Frequently-Used (LFU):</li>
+                        <ul>
+                            <li>Escolhe a página menos referenciada.</li>
+                            <li>Existe um controle do número de referências feitas às páginas.</li>
+                            <li>É escolhida a página que o contador tem o menor número de referências.</li>
+                            <li>Problema – As páginas que entrarem mais recentemente no working set serão as que estarão com o menor número no contador.</li>
+                        </ul>
+                    </ul>
+                </ul>
+                <h5>Tamanho da Página</h5>
+                <ul>
+                    <li>Paginação leva a uma menor fragmentação, pois apenas poderá haver fragmentação na última página.</li>
+                    <li>A fragmentação é conseqüência do tamanho da página.</li>
+                    <li>Páginas pequenas, tabelas de mapeamento maiores, maior taxa de paginação e aumento do número de acesso à memória secundária, porém, menor fragmentação.</li>
+                    <li>Tamanho da página associado ao hardware e varia de sistema para sistema, norlamente entre 512 bytes e 64 kb.</li>
+                </ul>
+                <h4>Segmentação</h4>
+                <ul>
+                    <li>Técnica de gerência de memória, onde os programas são divididos logicamente e em sub-rotinas e estruturas de dados e colocados em blocos de informações na memória</li>
+                    <li>Segmentos – blocos de tamanhos diferentes com seu próprio espaço de endereçamento.</li>
+                    <li>Segmentação X Paginação – Paginação com partes de tamanho fixo e segmentos com blocos de tamanhos variados e permite uma relação entre a lógica do programa e sua divisão na memória.</li>
+                    <li>Cada entrada na tabela de segmentos possuí o endereço do segmento na memória física, informações sobre o tamanho do segmento, sua proteção e se ele está na memória ou não.</li>
+                    <li>O Sistema Operacional mantém uma tabela com as áreas livres e ocupadas da memória.</li>
+                    <li>A escolha da área livre a ser ocupada por um processo a ser carregado na memória pode ser a mesma utilizada no item Alocação Particionada Dinâmica (best-fit, worst-fit ou first-fit).</li>
+                    <li>Apenas os segmentos referenciados são transferidos para a memória real.</li>
+                    <li>Os programas devem ser bem modularizados para uma maior eficiência.</li>
+                    <li>Existe também o problema da fragmentação e o problema da complexibilidade.</li>
+                </ul>
+                <h4>Segmentação com Paginação</h4>
+                <ul>
+                    <li>Permite a divisão lógica dos programas e segmentos e, cada segmento é dividido fisicamente em páginas.</li>
+                    <li>Um endereço é formado pelo número do segmento, pelo número de página, contida nesse segmento, e pelo deslocamento dentro dessa página.</li>
+                    <li>O endereço físico é obtido somando-se a posição inicial do frame e o deslocamento.</li>
+                </ul>
+                <h4>Proteção</h4>
+                <ul>
+                    <li>Necessária para impedir que um processo, ao acessar uma página/segmento do sistema, a modifique ou mesmo tenha acesso a ela.</li>
+                    <li>No esquema de memória virtual, cada processo tem sua própria tabela de mapeamento e a tradução dos endereços é realizada pelo sistema, impedindo assim, que um processo tenha acesso a áreas de memória de outros processos, a não ser
+                        que tenham compartilhamento explícito.</li>
+                    <li>A proteção deve ser realizada em nível de cada página/segmento na memória, utilizando-se as entradas da tabela de mapeamento, com alguns bits especificando permissões a cada uma das páginas/segmentos.</li>
+                </ul>
+                <h4>Compartilhamento de Memória</h4>
+                <ul>
+                    <li>Bastante útil para programas de código reentrante.</li>
+                    <li>Bastante simples implementação do compartilhamento de código e dados entre vários processos, bastando que as entradas das tabelas de páginas/segmentos apontem para as mesmas páginas/segmentos na memória principal.</li>
+                    <li>Reduz o número de programas na memória principal e aumenta o número de usuários compartilhando o mesmo recurso.</li>
+                    <li>Segmentação X Paginação em relação ao compartilhamento:</li>
+                    <ul>
+                        <li>O compartilhamento de segmentos é mais simples que o de páginas, pois as tabelas de segmentos mapeiam estruturas lógicas, como sub-rotinas e estruturas de dados.</li>
+                        <li>Enquanto o mapeamento de um vetor necessita de várias entradas na tabela de páginas, na tabela de segmentos é necessária apenas uma única entrada.</li>
+                        <li>O segmento pode variar seu tamanho durante a execução com o crescimento de um vetor, por exemplo, na paginação, isso implica na alocação de novas páginas.</li>
+                    </ul>
+                </ul>
+                <h4>Swapping em Memória Virtual</h4>
+                <ul>
+                    <li>Quando existem novos processos que desejam ser processados e não existe memória real suficiente, o sistema seleciona um ou mais processos que deverão sair da memória para ceder espaço aos novos processos.</li>
+                    <li>Os critérios mais utilizados para a escolha são a prioridade, escolhendo processos de melhor prioridade, e o estado do processo, selecionando os processos que estão no estado de espera.</li>
+                </ul>
+                <h4>Thrashing</h4>
+                <ul>
+                    <li>É a excessiva transferência de páginas/segmentos entre a memória principal e a memória secundária. Problema existente tanto em paginação quanto a segmentação.</li>
+                    <li>Na paginação:</li>
+                    <ul>
+                        <li>A nível de processo:</li>
+                        <ul>
+                            <li>o working set de um processo pode ser pequeno demais para acomodar as páginas constantemente acomodadas referenciadas por ele, a solução é aumentar o tamanho do working set.</li>
+                            <li>O thrashing também pode ocorrer pela não obediência do conceito da localidade, ou seja, o programa faz referência a comandos/dados localizados em páginas fora do working set do processo e a solução para isso é reescrever a
+                                aplicação.
+                            </li>
+                        </ul>
+                        <li>A nível de sistema:</li>
+                        <ul>
+                            <li>o trashing ocorre quando existem mais processos competindo por memória que espaço disponível.</li>
+                            <li>O primeiro passo é a redução do tamanho dos working set dos processos, mas isso pode levar o thrashing a nível de processo.</li>
+                        </ul>
+                    </ul>
+                    <li>Na segmentação:</li>
+                    <ul>
+                        <li>Em nível de processo, quando a trasferência de segmentos é excessiva devido a modularização extrema do programa não seguindo o conceito da modularidade.</li>
+                        <li>Em nível de sistema é semelhante ao caso da paginação.</li>
+                    </ul>
+                    <li>Em qualquer caso, se existem mais processos para serem executados que a memória real disponível, a única solução é expandir a memória principal.</li>
+                    <li>Este problema ocorre em todos os sistemas que possuem um mecanismo de gerência de memória.</li>
+                </ul>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>

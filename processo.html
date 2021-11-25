@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sistema Operacional - Eduvale</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-12">
+                <h1 class="alert alert-info text-center">Aulas de Sistemas Operacionais</h1>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-3">
+
+                <div class="list-group">
+                    <a href="index.html" class="list-group-item ">Visão Geral dos Sistemas Operacionais</a>
+                    <a href="evolucao.html" class="list-group-item">A Evolução dos Sistemas Operacionais</a>
+                    <a href="ocorrencias.html" class="list-group-item">Concorrência</a>
+                    <a href="estrutura.html" class="list-group-item">Estrutura do Sistema Operacional</a>
+                    <a href="processo.html" class="list-group-item active">Processo</a>
+                    <a href="thread.html" class="list-group-item">Thread</a>
+                    <a href="sincronizacao.html" class="list-group-item">Sincronização e Comunicação de Processos</a>
+                    <a href="gerencia_processador.html" class="list-group-item">Gerencia do Processador</a>
+                    <a href="gerencia_memoria.html" class="list-group-item">Gerência de Memória</a>
+                    <a href="gerencia_dispositivos.html" class="list-group-item">Gerencia de dispositivos</a>
+                    <a href="gerencia_arquivos.html" class="list-group-item">Gerência de Sistema de Arquivos</a>
+                    <a href="multiplos_processarores.html" class="list-group-item">Sistemas com múltiplos
+                        processadores</a>
+                </div>
+            </div>
+
+            <div class="col-9">
+                <h2 class="text-center alert alert-secondary">Processo</h2>
+                <h3>Introdução</h3>
+                <p>Vimos que em um ambiente multi programado o sistema operacional gerencia os diversos programas
+                    executados e controla o compartilhamento dos recursos por estes programas que são executados de
+                    forma concorrente.</p>
+                <p>Para que isso aconteça todo programa executado deve estar sempre associado a um processo. O conceito
+                    de processo é a base para a implementação de um sistema multi programado.</p>
+                <p>A gerência de processos é uma das funções do sistema operacional, possibilitando a alocação de
+                    recursos aos programas, o compartilhamento de dados e arquivos, a troca de informações entre
+                    programas e a sincronização de suas tarefas. Tudo isso é feito através da gerência de processos.</p>
+                <p>Em sistemas com múltiplos processadores existe a execução simultânea de processos em diferentes
+                    processadores.</p>
+                <h3>O Conceito de Processo</h3>
+                <p>O processador quando executa instruções de um processo não sabe qual programa encontra-se em
+                    execuçao. O sistema operacional é que deve implementar a concorrência entre programas gerenciando a
+                    alternância da execução de instruções na UCP de forma controlada a segura. Para isso o sistema
+                    operacional faz uso do conceito de processos.</p>
+                <p>Um processo pode ser entendido como um programa em execução. Para que a execução simultânea de
+                    diversos programas ocorra sem problemas é necessário que todas as informações do processo
+                    interrompido sejam salvas para que quando este voltar a ser executado não lhe falte nenhuma
+                    informação e possa continuar a execução exatamente no ponto onde estava quando foi interrompido.</p>
+                <p>O conceito de processo pode ser definido como sendo o conjunto de informações necessárias para que o
+                    sistema operacional implemente a concorrência de programas.</p>
+                <p>A concorrência de programas é implementada através da alternância de processos sendo executados na
+                    UCP. A troca de um processo por outro processo é feita pelo sistema operacional e é chamada por
+                    mudança de contexto. O conjunto de informações de um processo é chamado de contexto do processo.</p>
+
+                <h3>Ambiente do Processo</h3>
+                <p>Um processo também pode ser definido em termos do ambiente onde um programa é executado o que inclui
+                    a quantidade de recursos que o processo pode utilizar tais como espaço de endereçamento da memória
+                    principal, tempo de processador e área em disco.</p>
+                <p>O resultado da execução de um mesmo programa pode variar em função do ambiente em que ele é executado
+                    devido aos recursos disponíveis no momento de sua execução.</p>
+                <p>Caso um processo necessite de recursos não disponíveis o sistema operacional irá interromper sua
+                    execução por falta de recursos disponíveis.</p>
+
+                <h3>A Estrutura de um Processo</h3>
+                <p>Todo processo é formado por três partes:</p>
+                <ul>
+                    <li>Contexto de hardware</li>
+                    <li>Contexto de software</li>
+                    <li>Espaço de endereçamento</li>
+                </ul>
+
+                <img src="imgs/estrutura de um processo.jpg" alt="">
+
+                <h3>O Contexto de hardware</h3>
+                <p>O contexto de hardware armazena o conteúdo dos registradores gerais da UCP, além dos registradores de
+                    uso específicos ( CI ou PC, stack pointer ). Quando um processo está em execução, o seu conteúdo de
+                    hardware está armazenado nos registradores do processador.</p>
+                <h3>O Contexto de software</h3>
+                <p>O Contexto de software armazena informações sobre limites e características dos recursos que podem
+                    ser alocados pelo processo, como o número máximo de arquivos abertos simultaneamente, prioridade de
+                    execução e tamanho do buffer para operações de E/S. Estas características são determinadas no
+                    momento da criação do processo e durante sua execução.</p>
+                <p>O Contexto de software é composto por três grupos de informações sobre o processo:</p>
+                <ul>
+                    Identificação - Cada processo possui um identificador ( PID - process identification ) que é
+                    representado por um número. O processo é identificado pelo sistema operacional através do PID. O
+                    processo também possui a identificação do usuário ou processo que o criou ( owner ). Cada usuário
+                    possui uma identificação no sistema ( UID - User identification ), atribuida ao processo no momento
+                    de sua criação.
+
+                    Quotas - As quotas são o limite de cada recurso do sistema que um processo pode alocar. Caso uma
+                    quota seja o insuficiente o processo pode ser executado lentamente, ser interrompido ou até não ser
+                    executado. São exemplos de quotas:
+
+                    Numero máximo de arquivos abertos
+                    Tamanho máximo da memória principal e secundária que pode ser alocada
+                    Número máximo de operações de E/S pendentes
+                    Tamanho máximo do buffer para operações de E/S
+                    Número máximo de processos
+
+                    Privilégios - Os privilégios ou direitos definem as ações que um processo pode fazer em relação a
+                    ele mesmo, aos demais processos e ao sistema operacional.
+                </ul>
+
+                <h3>Espaço de Endereçamento</h3>
+                <p>O espaço de endereçamento é a área de memória pertencente ao processo onde instruções e dados do
+                    programa são armazenados para execução. Cada processo possui seu próprio espaço de endereçamento que
+                    é protegido pelo sistema operacional para que não haja acesso pelos demais processos em execução.
+                </p>
+
+                <h3>Bloco de Controle de Processo</h3>
+                <p>O processo é implementado pelo sistema operacional através de uma estrutura de dados chamada bloco de
+                    controle do processo ( PCB - Process Control Block ). O sistema operacional, através do PCB, mantém
+                    todas as informações sobre o contexto de hardware, contexto de software e espaço de endereçamento.
+                    Cada processo possui seu PCB que mantêm todas as suas informações.</p>
+                <p>OS PCBS de todos os processos são mantidos na memória principal em uma área exclusiva do sistema
+                    operacional. O tamanho desta área de memória é controlado por parâmetro no sistema operacional de
+                    acordo com o número máximo de processos que podem ser suportados pelo sistema operacional.</p>
+                <p>A figura abaixo mostra algumas das informações do BCP de um processo:</p>
+                <img src="imgs/bloco de controle de processo.png" alt="">
+
+
+                <h3>Estados de um Processo</h3>
+
+                <p>Em um sistema multi programado, os processos passam por vários estados durante a sua execução, em
+                    função de eventos gerados pelo sistema operacional ou pelo próprio processo.</p>
+                <p>Um processo ativo pode encontrar-se em um de três diferentes estados:</p>
+                <ul>
+                    <li> Execução ( Running ) - Quando o processo está em execução pela UCP.</li>
+                    <li> Pronto ( Ready ) - Quando o processo aguarda para ser executado. O sistema operacional
+                        determina a ordem e o critério para que um processo em estado de pronto possa ter acesso ao
+                        processador. Este processo é chamado de escalonamento de processos.</li>
+                    <li> Espera ( wait ) - Quando o processo aguarda um evento externo ou por algum recurso para
+                        prosseguir seu processamento. Por exemplo, o termino da gravação de um arquivo ou a espera de
+                        determinada hora para iniciar a execução de processo.</li>
+                </ul>
+
+                <h3>Mudanças de Estado de um Processo</h3>
+                <p>Um processo muda de estado durante seu processamento em virtude de eventos gerados pelo sistema
+                    operacional ou pelo próprio processo. Existem quatro mudanças de estado que podem ocorrer a um
+                    processo:</p>
+                <ul>
+                    <li>Pronto -> Execução - Após ser criado o processo é colocado em uma lista de execução em estado de
+                        pronto onde fica aguardando sua vez de ser executado.</li>
+
+                    <li>Execução -> Espera - Um estado em execução passa para o estado de espera por eventos externos ou
+                        por eventos gerados pelo próprio processo. Por exemplo, uma operação de entrada/saída.</li>
+
+                    <li>Espera -> Pronto - Um processo em espera para para o estado de pronto quando o recurso
+                        solicitado é concedido ou quando a operação solicitada é concluída. Um estado em espera sempre
+                        terá que voltar ao estadp de pronto antes de prosseguir sua execução. Nenhum processo em espera
+                        passa diretamente para execução.</li>
+
+                    <li>Execução -> Pronto - Um processo em execução passa para o estado de pronto por eventos gerados
+                        pelo sistema, como o término da fatia de tempo que o processo possui para sua execução.</li>
+                </ul>
+
+                <h3>Swapping de Processos</h3>
+                <p>Um processo em estado pronto ou de espera pode nao estar na memória principal. Esta condição ocorre
+                    quando não há espaço suficiente na memória principal para todos os processos. Neste caso, o contexto
+                    do processo é saldo em memória secundária. Este mecanismo é chamado swapping e consiste em retirar
+                    processos da memória principal e os trazer de volta à memória principal de acordo com critérios de
+                    cada sistema operacional.</p>
+
+                <h3>Criação e Eliminação de Processos</h3>
+                <p>Processos são criados e eliminados o tempo todo pelo sistema operacional.</p>
+                <p>A criação de um processo ocorre quando o sistema operacional adiciona um novo PCB a sua estrutura e
+                    aloca um espaço de endereçamento na memória para uso. A partir da criação do PCB o sistema
+                    operacional já reconhece a existência do processo. A partir desse momento é possível gerenciar o
+                    processo e associar ao seu contexto um programa para ser executado.</p>
+                <p>A eliminação de um processo desaloca todos os recursos associados ao processo e remove o PCB criado
+                    para o processo.</p>
+                <p>Existem dois estados adicionais para representar a criação e eliminação de processos.</p>
+                <p>Criação ( new ) - Um processo é dito no estado e criação quando o sistema operacional já criou um
+                    novo PCB, porem ainda não pode coloca-lo na lista de processos do estado pronto. Alguns sistemas
+                    operacionais limitam o número de processos ativos em função de recursos disponíveis ou de
+                    desempenho. Por isso, os processos criados permanecem no estado de criação até que possam ser
+                    colocados no estado pronto quando ficam ativos e aguardando para serem executados.</p>
+                <p>Terminado ( exit ) - Um processo no estado de terminado não poderá mais ter nenhum programa executado
+                    no seu contexto nem ter nenhum recurso alocado. Porém o sistema operacional ainda mantém informações
+                    do processo em memória. O processo no estado terminado não é mais considerado ativo.</p>
+
+                <p>Um processo pode passar para o estado terminado por razões como:</p>
+                <ul>
+                    <li>término normal de execução;</li>
+                    <li>eliminação por um outro processo;</li>
+                    <li>eliminação forçada por ausência de recursos disponíveis no sistema.</li>
+                </ul>
+
+                <p>A figura abaixo mostra um diagrama de estados de um processo:</p>
+                <img src="imgs/estados de um processo.jpg" alt="">
+
+                <h3>Processos CPU-Bound e I/O Bound</h3>
+                <p>Os processos podem ser classificados de acordo com o uso do processador ou dos dispositivos de E/S.
+                </p>
+                <p>Um processo é definido como CPU-Bound quando passa a maior parte do tempo no estado de execução,
+                    utilizando o processador, ou pronto. Este tipo de processo faz muito pouco uso de leitura e escrita
+                    em dispositivos de E/S.</p>
+                <p>Um processo é definido como I/O Bound quando passa a maior parte do tempo no estado de espera, pois
+                    realiza muitas operações de leitura e escrita. A maioria das aplicações comerciais constitui este
+                    tipo de processo que faz consultas e atualizações em um banco de dados, por exemplo, durante o uso
+                    pelos usuários.</p>
+                <h3>Processos foreground e background</h3>
+                <p>Os processos também podem ser classificados pela forma de comunicação com o usuário ou com outros
+                    processos. A comunicação dos processos é feita por canais de entrada e saída que podem estar
+                    associados a terminais, impressoras, arquivos ou a outros processos.</p>
+                <p>Um processo é dito Foreground quando permite a comunicação direta do usuario com o processo durante o
+                    seu processamento. Os canais de entrada e saida são geralmente o teclado e o terminal,
+                    respectivamente. Desta forma, existe interação entre o usuário e o processo durante a execução do
+                    processo.</p>
+                <p>Um processo é dito Background quando não permite a comunicação direta do usuário com o processo
+                    durante a sua execução. O processamento batch é geralmente associado a processos background.</p>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>

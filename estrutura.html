@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sistema Operacional - Eduvale</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-12">
+                <h1 class="alert alert-info text-center">Aulas de Sistemas Operacionais</h1>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-3">
+
+                <div class="list-group">
+                    <a href="index.html" class="list-group-item ">Visão Geral dos Sistemas Operacionais</a>
+                    <a href="evolucao.html" class="list-group-item">A Evolução dos Sistemas Operacionais</a>
+                    <a href="ocorrencias.html" class="list-group-item">Concorrência</a>
+                    <a href="estrutura.html" class="list-group-item active">Estrutura do Sistema Operacional</a>
+                    <a href="processo.html" class="list-group-item">Processo</a>
+                    <a href="thread.html" class="list-group-item">Thread</a>
+                    <a href="sincronizacao.html" class="list-group-item">Sincronização e Comunicação de Processos</a>
+                    <a href="gerencia_processador.html" class="list-group-item">Gerencia do Processador</a>
+                    <a href="gerencia_memoria.html" class="list-group-item">Gerência de Memória</a>
+                    <a href="gerencia_dispositivos.html" class="list-group-item">Gerencia de dispositivos</a>
+                    <a href="gerencia_arquivos.html" class="list-group-item">Gerência de Sistema de Arquivos</a>
+                    <a href="multiplos_processarores.html" class="list-group-item">Sistemas com múltiplos processadores</a>
+                </div>
+            </div>
+
+            <div class="col-9">
+                <h2 class="text-center alert alert-secondary">Estrutura do Sistema Operacional</h2>
+
+                <h3> Introdução</h3>
+                <p>
+                    Sabemos que o sistema operacional é um conjunto de rotinas que oferece serviços ao usuário e às aplicações mas ocorre que essa é uma forma muito simples de entender um sistema operacional.</p>
+                <p>
+                    Na verdade, o conjunto de rotinas é o que chama-se de núcleo do sistema operacional ou kernel.</p>
+                <p>
+                    Contudo os sistemas operacionais são formados por algo além do núcleo. Os sistemas operacionais possuem também uma linguagem de comandos e diversos utilitários de apoio que são usados para complementar o sistema operacional.</p>
+                <p>
+                    Os usuários e aplicações se comunicam com o núcleo do sistema operacional de maneiras distintas. Em geral, os usuários usam aplicações que invocam as rotinas do sistema operacional, por exemplo, quando gravamos um arquivo. Além disso, os usuários também
+                    usam a linguagem de comandos do sistema operacional para executar tarefas no sistema operacional e também usam programas utilitários para tarefas mais complexas como compilação, transmissão de arquivos por exemplo. O ponto é que cada
+                    sistema operacional possui sua própria linguagem de comandos, seus próprios utilitários e demais componentes que formam sua estrutura.</p>
+                <p>
+                    A estrutura de um sistema operacional pode variar conforme o projeto do próprio sistema operacional mas em geral temos os seguintes componentes:</p>
+                <img src="imgs/estrutura do sistema operacional.png" alt="">
+
+                <h3> Funções do Núcleo</h3>
+                <p>
+                    Diferente das rotinas de um programa do usuário que são executadas segundo uma determinada ordem definida no programa, as rotinas do sistema operacional são executadas concorrentemente sem uma ordem predefinida. A execução dessas rotinas do sistema operacional
+                    ocorre com base em eventos assíncronos. Muitos desses eventos são gerados por hardware e por tarefas internas do sistema operacional.</p>
+                <p>
+                    As principais funções do núcleo do sistema operacional estão listadas abaixo:</p>
+                <ul>
+                    <li>tratamento de interrupções e exceções;</li>
+                    <li>criação e eliminação de processos e threads;</li>
+                    <li>sincronização e comunicação entre processos e threads;</li>
+                    <li>gerencia de memória;</li>
+                    <li>gerencia do sistema de arquivos;</li>
+                    <li>gerencia de dispositivos de entrada e saída;</li>
+                    <li>suporte a redes locais e distribuídas;</li>
+                    <li>segurança e auditoria do sistema;</li>
+                    <li>contabilização de uso do sistema;</li>
+                </ul>
+                <p>
+                    Em sistemas multi programados é natural que surjam problemas relacionados com segurança do inter-relacionamento dos diversos subsistemas existente e recursos que são compartilhados pelos vários usuários e programas executados de forma concorrente pela
+                    UCP. Esta situação requer que o sistema operacional garanta a confiabilidade das tarefas sendo executadas de forma concorrente, dos dados dos usuários destas tarefas e a integridade do próprio sistema operacional.</p>
+                <p>
+                    Outra função do sistema operacional é garantir que nenhum processo monopolize o uso da UCP, permitindo que haja uma alternância dos processos executados concorrentemente.</p>
+                <p>
+                    Outra função do sistema operacional é garantir que cada programa tenha sua área de memória protegida de outros programas para que um programa não acesse nenhum endereço de memória que esteja em uso por outro programa. Caso um programa acesse um endereço
+                    de memória em uso por outro programa, deve ser gerado um erro, uma exceção.</p>
+                <p>
+                    Outra função semelhante do sistema operacional é garantir que os dados de cada usuário sejam gravados em disco de forma confiável, considerando que existem vários programas, de vários usuários, gravando dados no disco de forma concorrente. Neste caso
+                    é função do sistema operacional garantir a integridade e confiabilidade dos dados armazenados pelos vários programas executados. O sistema operacional deve permitir ainda que mais de um usuário possa ter acesso simultâneo aos dados
+                    de uma arquivo.</p>
+                <p>
+                    Todos estes cenários típicos e sistemas multi programados fazem com que o sistema operacional tenha que implementar uma série de controles e proteção para garantir a execução de várias tarefas e o compartilhamento seguro de confiável dos recursos do computador
+                    ( disco, memória, impressora, etc. ). Dois desses mecanismos nós vimos na aula passada, são as interrupções e as exceções.</p>
+
+                <h3> Modo de Acesso</h3>
+                <p>
+                    Em todo projeto de sistema operacional os projetistas sempre se preocuparam em garantir a integridade do próprio sistema operacional, protegendo o núcleo e o serviços do sistema operação de acessos indevidos por uma aplicação do usuário. Caso uma aplicação
+                    do usuário tenha acesso ao núcleo e realize alguma operação que altere sua integridade então todo o sistema ficará comprometido. Muitos sistemas operacionais utilizam um mecanismo de segurança implementado no hardware do processador
+                    e conhecido como modo de acesso.</p>
+                <p>
+                    Este mecanismo de proteção funciona através do conceito de modo usuário ou modo kernel.</p>
+                <p>
+                    Quando o processador trabalha em modo usuário, uma aplicação tem acesso a apenas algumas instruções não -privilegiadas. tendo acesso a um número reduzido de instruções. Quando o processador está em modo kernel a aplicação sendo executada tem acesso a
+                    todo o conjunto de instruções do processador, tem acesso as instruções privilegiadas. O modo de acesso é determinado por um conjunto de bits no registrador de status. O hardware verifica este registrador para determinar se uma instrução
+                    pode ou não ser executada.
+                </p>
+
+                <h3> Rotinas do Sistema Operacional e System Calls</h3>
+                <p>
+                    As rotinas do sistema operacional compõem o núcleo do sistema e possuem em seu código instruções privilegiadas. Portanto, estas rotinas somente podem ser executadas quando o processador está em modo kernel. Assim, as rotinas do sistema operacional não
+                    estão disponíveis para aplicações do usuário e deve ser implementado mecanismo de proteção a tais rotinas.</p>
+                <p>
+                    O mecanismo usa o controle de execução das rotinas do sistema operacional é conhecido como system call. Assim, toda a vez que uma aplicação do usuário chamar uma rotina do sistema operacional o mecanismo de system call é ativado e ele verifica se a aplicação
+                    do usuário possui os privilégios necessários para executar a rotina desejada.</p>
+                <p>
+                    Em caso negativo, o sistema operacional impede a execução da rotina e sinaliza que a execução não é possível.</p>
+                <p>
+                    Em caso positivo, o sistema operacional salva o estado dos registradores, troca o modo de acesso para kernel e realiza a execução da rotina do sistema operacional, alterando o registrador PC com o endereço da rotina chamada. Ao termino da execução da
+                    rotina, o modo de acesso é alterado para modo usuário.</p>
+
+                <h3> Chamadas a rotinas do Sistema Operacional</h3>
+                <p>
+                    As rotinas do sistema operacional e as system calls dão acesso as instruções privilegiadas e ao núcleo do sistema. Sempre que uma aplicação do usuário desejar executar uma rotina do sistema operacional deve invocar a system call que irá executar as rotinas
+                    do sistema operacional e retornar um status para a aplicação do usuário.</p>
+                <img src="imgs/system calls.png" alt="">
+
+                <p>
+                    As rotinas do sistema operacional podem ser divididas em grupos: Gerencia de processos e threads - Criação e alteração de processos e threads Sincronização e comunicação de processos e threads Obtenção de informações sobre processos e threads Gerencia
+                    de memoria - Alocação e deslocação de memória Gerencia do sistema de arquivos - Abrir e fechar arquivos, leitura e gravação de arquivos e diretórios, obteção de informações de arquivos e diretórios, alteração de informações de arquivos
+                    e diretórios. Gerencia de dispositivos - Alocação/deslocação de dispositivos Operações de entrada/saída de dispositivos Obtenção de informações sobre dispositivos</p>
+
+                <p>
+                    O termo system calls é comum em sistemas UNIX. Em outros sistemas existem termos como system services.</p>
+
+                <h3> Linguagem de Comandos</h3>
+                <p>
+                    A linguagem de comandos permite que os usuário se comuniquem com o sistema operacional de forma simples através de uma interface de comandos que são interpretados pelo interpretador de comandos da linguagem de comandos. A linguagem de comandos pode usar
+                    uma interface de linha de comandos ou uma interface gráfica. Para cada comando executado pelo usuário o interpretador de comandos verifica o comando, analisa a sintaxe do comado e verifica permissões para a execução do comando. Cada
+                    sistema operacional possui sua linguagem de comandos específica. Os comandos da linguagem de comandos podem ser gravados em arquivos de script para serem executados como se fossem programas. Esta forma de uso da linguagem de comandos
+                    é muito usada para a automação de tarefas rotineiras, como backup, carga de dados, etc.</p>
+                <p>
+                    A linguagem de comandos não faz parte do núcleo do sistema. Ela é um componente da arquitetura do sistema operacional e pode variar mesmo em versões do mesmo sistema operacional.</p>
+                <h3> Ativação/Desativação do Sistema</h3>
+                <p>
+                    Inicialmente quando o computador é ligado não existe sistema operacional carregado na memória da máquina. O sistema operacional é carregado através de um processo gravado na memória ROM da máquina chamado ativação do sistema ou boot.</p>
+                <p>
+                    O processo de ativação do sistema é iniciado automaticamente quandos o computador é ligado e inicialmente executa um programa chamado boot loader que é executado a partir da memória ROM.</p>
+                <p>
+                    O boot loader executa um outro programa chamado POST ( Power On Self Test ) que faz uma verificação do hardware da máquina para identificar posíveis problemas de hardware.</p>
+                <p>
+                    O boot loader busca no computador algum dispositivo de armazenamento que tenha um sistema operacional instalado. Caso nenhum dispositivo de armazenamento tenha um sistema operacional disponível é exibida uma mensagem de erro e o processo finaliza.</p>
+                <p>
+                    O boot loader busca no dispositivo de armazenamento o setor de boot onde carrega um conjunto de instruções para inicialização do sistema operacional.</p>
+                <p>
+                    O conjunto de instruções carregado em memória inicia a ativação do sistema operacional o que inclui também a execução de arquivos de inicialização para configuração do hardware e de parâmetros do próprio sistema operacional de acordo com as necessidades
+                    do usuário.</p>
+                <p>
+                    O processo de desativação do sistema operacional também conhecido como shutdown é um processo que é executado a partir de comandos do sistema operacional e permite que os componentes do sistema operacional e programas do usuário sejam encerrados de forma
+                    a garantir a integridade do sistema.</p>
+
+                <h3> Arquiteturas do Núcleo</h3>
+                <p>
+                    O projeto de um sistema operacional é realizado de forma a atender a requisitos operacionais de desempenho, portabilidade, confiabilidade, facilidade de uso, segurança.</p>
+                <p>
+                    O projeto do sistema operacional também depende da arquitetura de hardware e também do tipo de sistema operacional que se deseja construir: batch, tempo compartilhado, tempo real, multi programado, multi processado, etc.</p>
+                <p>
+                    Os primeiros sistemas operacionais eram escritos em Assembly mas isso garantia performance excepcional nos sistemas operacionais mas causava uma dependencia muito grando do sistema operacional em relação ao hardware da máquina e comprometia seriamente
+                    a portabilidade. O sistema operacional tinha que ser reescrito se precisasse ser instalado em uma máquina com arquitetura e hardware diferente.</p>
+                <p>
+                    O sistemas operacionais atuais são escritos em linguagens de alto nível, principalmente C e C++ o que garante portabilidade e independencia de hardware conteudo o desempenho é inferior aos antigos sistemas operacionais. Para minimizar este problema, os
+                    projetistas ainda usam Assembly para os componentes críticos do sistema operacional tais como drivers e as rotinas de tratamento de exceção que nós vimos na aula passada.</p>
+                <p>
+                    A forma como os componentes do sistema operacional são organizados pode variar, sendo que existem várias arquiteturas de sistemas operacionais disponíveis.</p>
+                <h3> Arquitetura Monolítica</h3>
+                <p>
+                    A arquitetura monolítica foi utilizada nos primeiros sistemas operacionais tais como CP/M, MS-DOS e nas primeiras versões do Linux. Nesta arquitetura os componentes do sistema são compilados em módulos separados e depois linkados em um único programa
+                    executável. Os módulos são carregados em memória e interagem entre si. A manutenção deste tipo de sistema é bem difícil.</p>
+                <img src="imgs/arquitetura monolitica.jpg" alt="">
+
+                <h3> Arquitetura em Camadas</h3>
+                <p>
+                    A arquitetura em camadas surgiu devido a complexidade dos sistema operacionais na medida em que foram evoluindo. Nesta arquitetura o sistema operacional é formado por níveis ou camadas onde as camadas inferior oferecem serviços às camadas superiores.
+                    As camadas inferiores são privilegiadas</p>
+                <img src="imgs/arquitetura em camadas.png" alt="">
+                <p>
+                    A vantagem deste tipo de arquitetura é o isolamento das camadas e a segurança e proteção às camadas mais internas onde fica o kernel.</p>
+                <p>
+                    A desvantagem é que o desempenho do sistema é afetado pela troca de modo de acesso. Quando um aplicativo do usuário solicita um serviço da camada kernel é necessário passar por várias outras camadas ( supervisor, executivo ) e realizar várias trocas do
+                    modo de acesso.</p>
+
+                <p>
+                    A maioria dos sistemas operacionais atuais tais como Linux e Windows utilizam o modelo de arquitetura em camadas sendo que estes sistemas implementam apenas duas camadas ( modo usuário e modo kernel ).</p>
+
+                <h3> Máquina Virtual</h3>
+                <p>
+                    Um sistema operacional é formado por níveis, onde a camada de nível mais baixo é o hardware. Acima dessa camada temos o sistema operacional que oferece serviços para os aplicativos do usuário.</p>
+                <p>
+                    Na arquitetura de máquina virtual existe uma camada intermediária entre o hardware e o sistema operacional chamada gerencia de máquinas virtuais.</p>
+                <p>
+                    Esta camada cria diversas máquinas virtuais independentes, onde cada uma oferece uma cópia virtual do hardware, incluindo os modos de acesso, interrupções, memória, dispositivos de entrada e saída, etc.</p>
+                <p>
+                    Como cada máquina virtual é independente das outras, é possível que cada VM tenha seu próprio sistema operacional e que seus usuários executem suas aplicações como se o computador estivesse dedicado a cada um deles.</p>
+                <p>
+                    Cada máquina virtual é isolada das demais o que proporciona segurança para cada VM. Isto garante também confiabilidade pois uma VM não pode comprometer o estado das outras VMs.</p>
+                <p>
+                    A desvantagem desta arquitetura é a grande complexidade. A camada de gerencia de máquinas virtuais é responsável por compartilhas e gerenciar os recursos do hardware entre as diversas VMS. Esta é uma arquitetura altamente complexa.</p>
+
+                <h3> Arquitetura MicroKernel</h3>
+                <p>
+                    A arquitetura MicroKernel busca tornar o núcleo do sistema, o kernel o menor e mais simples possível. Nesta arquitetura os serviços do sistema operacional são disponibilizados como serviços. Cada serviço oferece um conjunto de funções como gerência de
+                    arquivos, gerência de processos, gerência de memória e etc.</p>
+                <p>
+                    Quando uma aplicação do usuário solicita um serviço é feita uma solicitação ao processo responsável pelo serviço.</p>
+                <p>
+                    A aplicação que solicita o serviço é chamada cliente e o processo que responde à solicitação é chamado de servidor.</p>
+                <p>
+                    O núcleo do sistema se limita a realizar a comunicação entre cliente e servidor. É portanto um núcleo muito mais simples.</p>
+                <p>
+                    Nesta arquitetura, os processos executam suas funções em modo usuário, ou seja, não tem acesso a instruções privilegiadas, não tem acesso aos componentes do sistema. Apenas o núcleo executa em modo kernel. Isto garante que caso haja um erro em um processo
+                    o sistema não ficará completamente comprometido. Isso aumenta a disponibilidade do sistema.</p>
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>
